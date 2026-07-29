@@ -1,75 +1,18 @@
-# React + TypeScript + Vite
+# Hey, I'm [Alef Justin Loresca]((https://alefjustinloresca.vercel.app/))
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React Developer · Based in Laguna, Philippines.
 
-Currently, two official plugins are available:
+## Current Projects
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **[An AI-Driven 8-Bit Web Game For Personalized College Program Matching and Career Exploration](https://krobbus.github.io/8-Bit/)** - An interactive web game designed to guide students through college program matching and career exploration.
+- **[Asset Management for Mechanical Engineering Section (MES)]** - A custom asset management dashboard to digitize and streamline the tracking of engineering equipment, measurements, and acquisition costs.
+- **[FoRent: Rental Property Management System](https://forent-rental.vercel.app/)** - A full-stack property management platform creating distinct, feature-rich management for landlords and tenants to manage leases, maintenance, and applications.
+- **[PokeDex Research Lab Wiki](https://pokedex-research-lab-wiki.vercel.app/)** - A retro-inspired Pokedex, Integrated the PokeAPI to fetch real-time data for over 1,300 Pokemon, detailed modal views with descriptions and abilities.
 
-## React Compiler
+## What can I Do?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I design and develop responsive websites using React, Typescript, NextJS, and many more. I solve problems and turning ideas to produce real and useful projects, including a system that will help for everyday workflows.
 
-## Expanding the ESLint configuration
+## Connect
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+[Portfolio](https://alefjustinloresca.vercel.app/) · [LinkedIn](https://www.linkedin.com/in/alefjustinloresca/) · [Instagram](https://www.instagram.com/ajloresca/) · [Schedule a meeting?](https://calendly.com/lorescajustin/15-minutes-meeting)
