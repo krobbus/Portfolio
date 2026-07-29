@@ -1,4 +1,4 @@
-# Hey, I'm [Alef Justin Loresca]((https://alefjustinloresca.vercel.app/))
+# Hey, I'm [Alef Justin Loresca](https://alefjustinloresca.vercel.app/)
 
 A React Developer · Based in Laguna, Philippines.
 
