@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import './App.css'
-import './styles/Font.css'
-import VideoSlideshow from './components/VideoSlideshow.tsx'
-import type { Slide } from './components/VideoSlideshow.tsx';
+import { Analytics } from '@vercel/analytics/react';
 
-const project1Slides: Slide[] = [
+import './App.css';
+import './styles/Font.css';
+
+import VideoSlideshow from './components/VideoSlideshow.tsx';
+import type { VideoSlide } from './components/VideoSlideshow.tsx';
+import CertSlideshow from './components/CertSlideshow.tsx';
+import type { CertSlide } from './components/CertSlideshow.tsx';
+
+const project1Slides: VideoSlide[] = [
   { src: './images/8-bit/LoginPage.png', caption: 'Login Page' },
   { src: './images/8-bit/Manual.png', caption: 'Game Manual' },
   { src: './images/8-bit/OutdoorScene.png', caption: 'Outdoor Scene' },
@@ -21,11 +26,11 @@ const project1Slides: Slide[] = [
   { src: './images/8-bit/Dialogue.png', caption: 'NPC Dialogue (Giving Tips and Motivation)' },
 ];
 
-const project2Slides: Slide[] = [
+const project2Slides: VideoSlide[] = [
   { src: './images/AssetManagement/AssetManagement.png', caption: 'Asset Management Overview' },
 ];
 
-const project3Slides: Slide[] = [
+const project3Slides: VideoSlide[] = [
   { src: './videos/FoRent/LoginRegistration.mp4', caption: 'Login and Registration' },
   { src: './videos/FoRent/Marketplace.mp4', caption: 'Marketplace' },
   { src: './videos/FoRent/Features.mp4', caption: 'Features' },
@@ -35,8 +40,13 @@ const project3Slides: Slide[] = [
   { src: './videos/FoRent/RequestingMaintenance.mp4', caption: 'Requesting Maintenance' },
 ];
 
-const project4Slides: Slide[] = [
+const project4Slides: VideoSlide[] = [
   { src: './videos/Pokedex/PokeDexOverview.mp4', caption: 'PokeDex Overview' },
+];
+
+const certSlides: CertSlide[] = [
+  { src: './images/Certificates/Cert1.jpg', details: "Great Learning's Front End Development (HTML), 2024" },
+  { src: './images/Certificates/Cert2.jpg', details: "On-The-Job Training (OJT) Completion, 2026" },
 ];
 
 function App() {
@@ -74,6 +84,8 @@ function App() {
 
   return (
     <section id='portfolio-container'>
+      <Analytics />
+
       <header>
         <div id='top-header'>
           <address>Laguna, Philippines</address>
@@ -269,6 +281,12 @@ function App() {
               </ul>
             </div>
           </div>
+        </section>
+
+        <section id='certifications-section'>
+          <h3>CERTIFICATIONS</h3>
+
+          <CertSlideshow slides={certSlides} />
         </section>
       </main>
 

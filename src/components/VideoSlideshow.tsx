@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/VideoSlideshow.css';
 
-export interface Slide {
+export interface VideoSlide {
   src: string;
   caption?: string;
 }
 
 interface VideoSlideshowProps {
-  slides: Slide[];
+  slides: VideoSlide[];
   autoPlay?: boolean;
 }
 

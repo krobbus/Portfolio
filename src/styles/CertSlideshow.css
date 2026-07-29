@@ -1,0 +1,83 @@
+#cert-container{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    .slideshow-nav-btn {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 16.6667%;
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 1vw;
+      z-index: 2;
+
+      .slideshow-nav-icon {
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 99vw;
+        padding: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 1vw;
+          height: 1vw;
+          stroke: #fff;
+        }
+      }
+
+      &.prev {
+        left: 0;
+        justify-content: flex-start;
+      }
+
+      &.next {
+        right: 0;
+        justify-content: flex-end;
+      }
+    }
+
+    #cert-viewport{
+        width: 100%;
+        overflow: hidden;
+        padding: 4vw 0;
+
+        #cert-track{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            transition: transform 500ms ease;
+
+            .cert-slide{
+                flex: 0 0 calc(100% / 4);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 15vh;
+                padding: 0 2vw;
+                box-sizing: border-box;
+        
+                img{
+                    height: 40vh;
+                    transform: rotate(-10deg);
+                }
+        
+                p{
+                    color: #316A2F;
+                    font-family: 'Playfair Display';
+                    font-size: 1vw;
+                    font-weight: 500;
+                    text-align: center;
+                    width: 25vw;
+                }
+            }
+        }
+    }
+}
