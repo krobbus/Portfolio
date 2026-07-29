@@ -53,16 +53,19 @@ function ChevronRightIcon() {
 export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlideshowProps) {
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(autoPlay);
-  const [progress, setProgress] = useState(0);
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-  const durationsRef = useRef<number[]>(slides.map(() => SLIDE_DURATION));
-  const rafRef = useRef<number | null>(null);
-  const startRef = useRef<number | null>(null);
-  const elapsedRef = useRef(0);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const total = slides.length;
   const hasMultiple = total > 1;
+
+  const goTo = useCallback((i: number) => {
+    setIndex(((i % total) + total) % total);
+  }, [total]);
+
+  const next = useCallback(() => goTo(index + 1), [goTo, index]);
+  const prev = useCallback(() => goTo(index - 1), [goTo, index]);
 
   useEffect(() => {
     slides.forEach((slide, i) => {
@@ -77,54 +80,30 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
     });
   }, [index, playing, slides]);
 
-  const goTo = useCallback((i: number) => {
-    setIndex(((i % total) + total) % total);
-    setProgress(0);
-    elapsedRef.current = 0;
-    startRef.current = null;
-  }, [total]);
-
-  const next = useCallback(() => goTo(index + 1), [goTo, index]);
-  const prev = useCallback(() => goTo(index - 1), [goTo, index]);
-
   useEffect(() => {
-    if (!playing) {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      return;
-    }
-
-    const tick = (t: number) => {
-      if (startRef.current === null) startRef.current = t - elapsedRef.current;
-      const elapsed = t - startRef.current;
-      elapsedRef.current = elapsed;
-
-      const currentIsVideo = isVideo(slides[index].src);
-      const duration = currentIsVideo
-        ? (durationsRef.current[index] || SLIDE_DURATION)
-        : SLIDE_DURATION;
-
-      const pct = Math.min(elapsed / duration, 1);
-      setProgress(pct);
-
-      if (pct >= 1) {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    if (!playing) return;
+ 
+    const currentSlide = slides[index];
+    if (!isVideo(currentSlide.src)) {
+      timeoutRef.current = setTimeout(() => {
         setIndex((prevIdx) => (prevIdx + 1) % total);
-        elapsedRef.current = 0;
-        startRef.current = t;
-        setProgress(0);
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
+      }, SLIDE_DURATION);
+    }
+ 
     return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [playing, total]);
+  }, [index, playing, total, slides]);
 
   useEffect(() => {
     if (!hasMultiple) return;
 
     const handleKey = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      const isTyping = ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName);
+      if (isTyping) return;
+
       if (e.key === 'ArrowRight') next();
       if (e.key === 'ArrowLeft') prev();
       if (e.key === ' ') { e.preventDefault(); setPlaying((p) => !p); }
@@ -145,12 +124,6 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
               muted
               playsInline
               loop
-              onLoadedMetadata={(e) => {
-                const dur = e.currentTarget.duration;
-                if (dur && !Number.isNaN(dur)) {
-                  durationsRef.current[i] = dur * 1000;
-                }
-              }}
               className={`slideshow-image ${i === index ? 'active' : ''}`}
             />
           ) : (
@@ -182,27 +155,6 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
           </>
         )}
       </div>
-      
-      {hasMultiple && (
-        <div className="slideshow-progress">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              className="slideshow-progress-track"
-            >
-              <div
-                className="slideshow-progress-fill"
-                style={{
-                  width: i < index ? '100%' : i === index ? `${progress * 100}%` : '0%',
-                  transition: i === index ? 'none' : 'width 200ms',
-                }}
-              />
-            </button>
-          ))}
-        </div>
-      )}
 
       <div className="slideshow-controls">
         <button onClick={() => setPlaying((p) => !p)} className="slideshow-play-btn">

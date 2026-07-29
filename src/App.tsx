@@ -6,48 +6,9 @@ import './App.css';
 import './styles/Font.css';
 
 import VideoSlideshow from './components/VideoSlideshow.tsx';
-import type { VideoSlide } from './components/VideoSlideshow.tsx';
+import { project1Slides, project2Slides, project3Slides, project4Slides } from './references/ProjectRef.tsx';
 import CertSlideshow from './components/CertSlideshow.tsx';
-import type { CertSlide } from './components/CertSlideshow.tsx';
-
-const project1Slides: VideoSlide[] = [
-  { src: './images/8-bit/LoginPage.png', caption: 'Login Page' },
-  { src: './images/8-bit/Manual.png', caption: 'Game Manual' },
-  { src: './images/8-bit/OutdoorScene.png', caption: 'Outdoor Scene' },
-  { src: './images/8-bit/IndoorScene.png', caption: 'Indoor Scene' },
-  { src: './images/8-bit/CharacterCreation.png', caption: 'Character Creation' },
-  { src: './images/8-bit/SkillTraitsSelection.png', caption: 'Personal Skills/Traits Selection' },
-  { src: './images/8-bit/AccountCreation.png', caption: 'Creating Account' },
-  { src: './images/8-bit/Dashboard.png', caption: 'Dashboard (Account Details, List of Selected Course/s, and AI-Suggestions)' },
-  { src: './images/8-bit/CourseReview.png', caption: 'Reviewing Course Assessment & Scores' },
-  { src: './images/8-bit/Suggestion.png', caption: 'AI-Comment and Suggestion' },
-  { src: './images/8-bit/QuizGame.png', caption: 'Classroom Scene (Quiz Game)' },
-  { src: './images/8-bit/Leaderboard.png', caption: 'Leaderboard' },
-  { src: './images/8-bit/Dialogue.png', caption: 'NPC Dialogue (Giving Tips and Motivation)' },
-];
-
-const project2Slides: VideoSlide[] = [
-  { src: './images/AssetManagement/AssetManagement.png', caption: 'Asset Management Overview' },
-];
-
-const project3Slides: VideoSlide[] = [
-  { src: './videos/FoRent/LoginRegistration.mp4', caption: 'Login and Registration' },
-  { src: './videos/FoRent/Marketplace.mp4', caption: 'Marketplace' },
-  { src: './videos/FoRent/Features.mp4', caption: 'Features' },
-  { src: './videos/FoRent/ModifyingAddingProperty.mp4', caption: 'Modifying & Adding Property' },
-  { src: './videos/FoRent/RentProperty.mp4', caption: 'Renting Property' },
-  { src: './videos/FoRent/PaymentProcess.mp4', caption: 'Payment Process' },
-  { src: './videos/FoRent/RequestingMaintenance.mp4', caption: 'Requesting Maintenance' },
-];
-
-const project4Slides: VideoSlide[] = [
-  { src: './videos/Pokedex/PokeDexOverview.mp4', caption: 'PokeDex Overview' },
-];
-
-const certSlides: CertSlide[] = [
-  { src: './images/Certificates/Cert1.jpg', details: "Great Learning's Front End Development (HTML), 2024" },
-  { src: './images/Certificates/Cert2.jpg', details: "On-The-Job Training (OJT) Completion, 2026" },
-];
+import { certSlides } from './references/CertRef.tsx';
 
 function App() {
   const [name, setName] = useState('');
@@ -63,10 +24,10 @@ function App() {
 
     try {
       await emailjs.send(
-        import.meta.env.SERVICE_ID,
-        import.meta.env.TEMPLATE_ID,
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
         { name, email, number, subject, message },
-        import.meta.env.PUBLIC_KEY
+        import.meta.env.VITE_PUBLIC_KEY
       );
       alert("Message sent! I'll get back to you soon.");
       setName('');
