@@ -10,22 +10,6 @@ interface CertSlideshowProps {
   slides: CertSlide[];
 }
 
-function ChevronLeftIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="15 18 9 12 15 6" />
-    </svg>
-  );
-}
-
-function ChevronRightIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="9 18 15 12 9 6" />
-    </svg>
-  );
-}
-
 export default function CertSlideshow({ slides }: CertSlideshowProps) {
   const [index, setIndex] = useState(0);
   const total = slides.length;
@@ -55,12 +39,16 @@ export default function CertSlideshow({ slides }: CertSlideshowProps) {
         </div>
       </div>
 
-      <button onClick={prev} aria-label='Previous certificate' className="slideshow-nav-btn prev">
-        <span className="slideshow-nav-icon"><ChevronLeftIcon /></span>
+      <button onClick={prev} aria-label="Previous certificate" className="slideshow-nav-btn prev">
+        <span className="slideshow-nav-icon">
+          <img src='./images/Icons/Left.png' alt='Left Icon' />
+        </span>
       </button>
-
-      <button onClick={next} aria-label='Next certificate' className="slideshow-nav-btn next">
-        <span className="slideshow-nav-icon"><ChevronRightIcon /></span>
+      
+      <button onClick={next} aria-label="Next certificate" className="slideshow-nav-btn next">
+        <span className="slideshow-nav-icon">
+          <img src='./images/Icons/Right.png' alt='Right Icon' />
+        </span>
       </button>
     </div>
   );

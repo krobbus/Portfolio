@@ -17,39 +17,6 @@ function isVideo(src: string) {
 
 const SLIDE_DURATION = 4000;
 
-function PlayIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polygon points="5 3 19 12 5 21 5 3" />
-    </svg>
-  );
-}
-
-function PauseIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="6" y="4" width="4" height="16" />
-      <rect x="14" y="4" width="4" height="16" />
-    </svg>
-  );
-}
-
-function ChevronLeftIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="15 18 9 12 15 6" />
-    </svg>
-  );
-}
-
-function ChevronRightIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <polyline points="9 18 15 12 9 6" />
-    </svg>
-  );
-}
-
 export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlideshowProps) {
   const [index, setIndex] = useState(0);
   const [playing, setPlaying] = useState(autoPlay);
@@ -146,11 +113,15 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
         {hasMultiple && (
           <>
             <button onClick={prev} aria-label="Previous slide" className="slideshow-nav-btn prev">
-              <span className="slideshow-nav-icon"><ChevronLeftIcon /></span>
+              <span className="slideshow-nav-icon">
+                <img src='./images/Icons/Left.png' alt='Left Icon' />
+              </span>
             </button>
             
             <button onClick={next} aria-label="Next slide" className="slideshow-nav-btn next">
-              <span className="slideshow-nav-icon"><ChevronRightIcon /></span>
+              <span className="slideshow-nav-icon">
+                <img src='./images/Icons/Right.png' alt='Right Icon' />
+              </span>
             </button>
           </>
         )}
@@ -158,7 +129,9 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
 
       <div className="slideshow-controls">
         <button onClick={() => setPlaying((p) => !p)} className="slideshow-play-btn">
-          {playing ? <PauseIcon /> : <PlayIcon />}
+          {playing ? 
+            <img src='./images/Icons/Pause.png' alt='Pause Icon' /> : <img src='./images/Icons/Play.png' alt='Play Icon' />
+          }
           {playing ? 'Pause' : 'Play'}
         </button>
 

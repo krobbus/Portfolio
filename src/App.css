@@ -129,6 +129,24 @@ body{
             }
         }
 
+        @media (max-width: 1000px) {
+            header{
+                #top-header{ font-size: calc(var(--small-desktop-font) - 5px); }
+
+                #main-header{
+                    h1{ font-size: calc(var(--title-desktop-font) - 40px); }
+                    h2{ font-size: calc(var(--small-desktop-font) - 5px); }
+                }
+
+                #contact-pills{
+                    span{
+                        width: calc(var(--pill-width) - 50px);
+                        a{ font-size: calc(var(--small-desktop-font) - 5px); }
+                    }
+                }
+            }
+        }
+
         nav{
             top: 0;
             position: sticky;
@@ -174,6 +192,14 @@ body{
             }
         }
 
+        @media (max-width: 1000px){
+            nav{
+                font-size: calc(var(--medium-small-desktop-font) - 10px);
+                span{ margin-left: 0.5vw; }
+                ul{ gap: 2vw; }
+            }
+        }
+
         #about-section{
             display: flex;
             flex-direction: row;
@@ -183,7 +209,6 @@ body{
             padding: 1vw;
             margin: 8vw 0;
             font-family: 'Josefin Sans', serif;
-            font-size: var(--medium-small-desktop-font);
 
             #about-img-wrapper{
                 top: 0;
@@ -300,6 +325,44 @@ body{
             }
         }
 
+        @media (max-width: 1000px){
+            #about-section{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5vw;
+
+                #about-img-wrapper{
+                    position: relative;
+                    justify-content: center;
+
+                    img{ width: 40vw; }             
+                }
+
+                #about-details-wrapper{
+                    #profile-section{
+                        h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
+
+                        p{
+                            font-size: calc(var(--medium-small-desktop-font) - 10px);
+                            line-height: calc(var(--line-height) - 10px);
+                        }
+
+                        button{ font-size: calc(var(--medium-small-desktop-font) - 10px); }
+                    }
+
+                    #stack-section{
+                        h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
+
+                        .list-container{
+                            p{ font-size: calc(var(--small-header-desktop-font) - 10px); }
+                            .pill-container{ span{ font-size: calc(var(--small-desktop-font) - 5px); }}
+                        }
+                    }
+                }
+            }
+        }
+
         #projects-section{
             display: flex;
             flex-direction: column;
@@ -386,6 +449,27 @@ body{
             }
         }
 
+        @media (max-width: 1000px){
+            #projects-section{
+                h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
+                
+                #project-list{
+                    display: flex;
+                    flex-direction: column;
+
+                    .project-cards{
+                        .project-id{
+                            .project-num, .project-category{ font-size: calc(var(--small-desktop-font) - 5px); }
+                            h4{ font-size: calc(var(--small-header-desktop-font) - 10px); }
+                            .project-link{ font-size: calc(var(--small-desktop-font) - 5px); }
+                        }
+
+                        .project-description{ font-size: calc(var(--small-desktop-font) - 5px); }
+                    }
+                }
+            }
+        }
+
         #certifications-section{
             display: flex;
             flex-direction: column;
@@ -401,6 +485,10 @@ body{
                 font-size: var(--large-header-desktop-font);
                 text-align: center;
             }
+        }
+
+        @media (max-width: 1000px){
+            #certifications-section{ h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }}
         }
 
         footer{
@@ -450,7 +538,7 @@ body{
                         padding: 0.5vw 1vw;
                         padding-left: 0;
                         font-family: 'Josefin Sans', serif;
-                        font-size: 1vw;
+                        font-size: var(--small-desktop-font);
                     }
 
                     input[type='text']{
@@ -501,11 +589,8 @@ body{
                     flex-direction: row;
                     justify-content: center;
                     align-items: center;
-                    gap: 1vw;
+                    gap: 2vw;
                     width: 100%;
-                    font-family: 'Playfair Display', serif;
-                    font-weight: 500;
-                    font-size: var(--small-header-desktop-font);
                     
                     a{
                         filter:
@@ -527,6 +612,39 @@ body{
 
                         &:hover{
                             transform: scale(0.9);
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 1000px){
+            footer{
+                h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
+
+                #email-container {               
+                    form{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1vw;
+
+                        input, select, textarea{
+                            font-size: calc(var(--small-desktop-font) - 5px);
+                            width: 100%;
+                        }
+
+                        button{
+                            font-size: calc(var(--small-desktop-font) - 5px);
+                            margin-top: 2vh;
+                        }
+                    }
+
+                    #contact-containers {                     
+                        a{
+                            img{
+                                height: 3vw;
+                                width: 3vw;
+                            }
                         }
                     }
                 }
