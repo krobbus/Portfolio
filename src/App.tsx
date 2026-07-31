@@ -170,77 +170,71 @@ function App() {
         <section id='projects-section'>
           <h3>SELECTED WORKS</h3>
           
-          <div id='project-1' className='project-cards'>
-            <VideoSlideshow slides={project1Slides} />
+          <div id='project-list'>
+            <div id='project-1' className='project-cards'>
+              <VideoSlideshow slides={project1Slides} />
 
-            <div className='project-id'>
-              <span className='project-num'>[Project 01]</span>
-              <h4>An AI-Driven 8-Bit Web Game For Personalized College Program Matching and Career Exploration</h4>
-              <span className='project-category'>Lead Full-Stack Developer, Capstone Project</span>
-              <span className='project-link'>Link: <a href='https://krobbus.github.io/8-Bit/' target='_blank' rel='noopener noreferrer'>krobbus.github.io/8-Bit/</a></span>
-            </div>
+              <div className='project-id'>
+                <span className='project-num'>[Project 01]</span>
+                <h4>An AI-Driven 8-Bit Web Game For Personalized College Program Matching and Career Exploration</h4>
+                <span className='project-category'>Lead Full-Stack Developer, Capstone Project</span>
+                <span className='project-link'>Link: <a href='https://krobbus.github.io/8-Bit/' target='_blank' rel='noopener noreferrer'>krobbus.github.io/8-Bit/</a></span>
+              </div>
 
-            <div className='project-description'>
-              <ul>
+              <ul className='project-description'>
                 <li><span>Lead a team of 3 as the Lead Full-Stack Developer</span> to architect and launch <span>an interactive web game designed to guide students through college program matching and career exploration.</span></li>
                 <li>Engineered <span>an AI-driven recommendation engine by integrating the Gemini API</span>, processing user inputs in real-time to deliver highly personalized college and career pathways.</li>
                 <li>Developed <span>a fully responsive, mobile-first user interface using ReactJs and PhaserJS</span>, ensuring seamless gameplay and accessibility across desktop, tablet, and mobile devices.</li>
                 <li>Collaborated cross-functionally to manage project timelines, conduct code reviews, and ensure the seamless integration of front-end components with back-end AI services.</li>
               </ul>
             </div>
-          </div>
 
-          <div id='project-2' className='project-cards'>
-            <VideoSlideshow slides={project2Slides} />
+            <div id='project-2' className='project-cards'>
+              <VideoSlideshow slides={project2Slides} />
 
-            <div className='project-id'>
-              <span className='project-num'>[Project 02]</span>
-              <h4>Mechanical Engineering Section (MES) Asset Management</h4>
-              <span className='project-category'>Developer, Freelance Project during Internship</span>
-            </div>
+              <div className='project-id'>
+                <span className='project-num'>[Project 02]</span>
+                <h4>Mechanical Engineering Section (MES) Asset Management</h4>
+                <span className='project-category'>Developer, Freelance Project during Internship</span>
+              </div>
 
-            <div className='project-description'>
-              <ul>
+              <ul className='project-description'>
                 <li>Developed <span>a custom asset management dashboard using ReactJS</span> to digitize and streamline the tracking of engineering equipment, measurements, and acquisition costs.</li>
                 <li>Engineered a secure data-entry workflow <span>utilizing React Hook Form and standard validation</span>, reducing manual entry errors for critical equipment metrics and pricing.</li>
                 <li>Designed a relational <span>PostgreSQL database schema</span> to efficiently store, categorize, and <span>retrieve technical specifications and financial data for 500+ physical assets</span>.</li>
                 <li><span>Implemented a responsive, table-driven user interface with Tailwind CSS</span>, allowing Deputy Chief and the engineering staffs to easily search, filter, and update equipment statuses in real-time.</li>
               </ul>
             </div>
-          </div>
 
-          <div id='project-3' className='project-cards'>
-            <VideoSlideshow slides={project3Slides} />
+            <div id='project-3' className='project-cards'>
+              <VideoSlideshow slides={project3Slides} />
 
-            <div className='project-id'>
-              <span className='project-num'>[Project 03]</span>
-              <h4>FoRent: Rental Property Management System</h4>
-              <span className='project-category'>Lead Full-Stack Developer and Web Designer, 3rd year Project</span>
-              <span className='project-link'>Link: <a href='https://forent-rental.vercel.app/' target='_blank' rel='noopener noreferrer'>forent-rental.vercel.app/</a></span>
-            </div>
+              <div className='project-id'>
+                <span className='project-num'>[Project 03]</span>
+                <h4>FoRent: Rental Property Management System</h4>
+                <span className='project-category'>Lead Full-Stack Developer and Web Designer, 3rd year Project</span>
+                <span className='project-link'>Link: <a href='https://forent-rental.vercel.app/' target='_blank' rel='noopener noreferrer'>forent-rental.vercel.app/</a></span>
+              </div>
 
-            <div className='project-description'>
-              <ul>
+              <ul className='project-description'>
                 <li>Architected <span>a full-stack property management platform using React, TypeScript, Node.js, and Express</span>, creating distinct, feature-rich management for landlords and tenants to manage leases, maintenance, and applications.</li>
                 <li>Designed and <span>implemented a relational database schema using PostgreSQL (hosted on Neon)</span> to efficiently handle complex data relationships across users, properties, transactions, and maintenance requests.</li>
                 <li>Integrated <span>Stripe for secure rent and deposit payments</span>, enabling tenants to pay online and landlords to track transaction history and payment status in real time.</li>
                 <li>Deployed scalable application infrastructure utilizing <span>Vercel for the frontend and Render for the backend</span>, ensuring high availability and smooth delivery of updates.</li>
               </ul>
             </div>
-          </div>
 
-          <div id='project-4' className='project-cards'>
-            <VideoSlideshow slides={project4Slides} />
+            <div id='project-4' className='project-cards'>
+              <VideoSlideshow slides={project4Slides} />
 
-            <div className='project-id'>
-              <span className='project-num'>[Project 04]</span>
-              <h4>PokeDex Research Lab Wiki</h4>
-              <span className='project-category'>Full-Stack Developer, 1st year Project</span>
-              <span className='project-link'>Link: <a href='https://pokedex-research-lab-wiki.vercel.app/' target='_blank' rel='noopener noreferrer'>pokedex-research-lab-wiki.vercel.app/</a></span>
-            </div>
+              <div className='project-id'>
+                <span className='project-num'>[Project 04]</span>
+                <h4>PokeDex Research Lab Wiki</h4>
+                <span className='project-category'>Full-Stack Developer, 1st year Project</span>
+                <span className='project-link'>Link: <a href='https://pokedex-research-lab-wiki.vercel.app/' target='_blank' rel='noopener noreferrer'>pokedex-research-lab-wiki.vercel.app/</a></span>
+              </div>
 
-            <div className='project-description'>
-              <ul>
+              <ul className='project-description'>
                 <li>Redesigned <span>a retro-inspired Pokedex built with React and TypeScript</span>, refocusing the original 1st-year project into a clean, dedicated data-reference tool by removing unnecessary account and static-page features.</li>
                 <li>Integrated <span>the PokeAPI to fetch real-time data for over 1,300 Pokemon</span>, implementing batched loading and secondary API calls to populate detailed modal views with descriptions and abilities.</li>
                 <li>Built <span>smart search, type filtering, and sorting functionality</span>, with robust error handling for misspelled queries, missing sprites, and empty filter results.</li>
@@ -259,12 +253,6 @@ function App() {
 
       <footer id='contact-section'>
         <h3>KEEP IN TOUCH</h3>
-
-        <div id='contact-containers'>
-          <div id='linkedin-container'><a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>LinkedIn</a></div>
-          <div id='instagram-container'><a href='https://www.instagram.com/ajloresca/' target='_blank' rel='noopener noreferrer'>Instagram</a></div>
-          <div id='messenger-container'><a href='https://m.me/lorescaalef/' target='_blank' rel='noopener noreferrer'>Messenger</a></div>
-        </div>
 
         <div id='email-container'>
           <form onSubmit={handleSubmit}>
@@ -299,11 +287,26 @@ function App() {
                   type='submit'
                   disabled={sending}
                 >
-                  {sending ? 'Sending...' : 'Send Message'}
+                  &#9993;
+                  {sending ? ' Sending...' : ' Send Message'}
                 </button>
               </>
             )}
           </form>
+
+          <div id='contact-containers'>
+            <a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>
+              <img src='./images/Icons/LinkedIn.png' alt='LinkedIn Icon' />
+            </a>
+
+            <a href='https://www.instagram.com/ajloresca/' target='_blank' rel='noopener noreferrer'>
+              <img src='./images/Icons/Instagram.png' alt='Instagram Icon' />
+            </a>
+
+            <a href='https://m.me/lorescaalef/' target='_blank' rel='noopener noreferrer'>
+              <img src='./images/Icons/Messenger.png' alt='Messenger Icon' />
+            </a>
+          </div>
         </div>
       </footer>
     </section>
