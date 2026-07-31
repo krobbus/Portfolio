@@ -11,6 +11,8 @@ import CertSlideshow from './components/CertSlideshow.tsx';
 import { certSlides } from './references/CertRef.tsx';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleNavClick = () => setMenuOpen(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [number, setNumber] = useState('');
@@ -72,6 +74,7 @@ function App() {
       <main>
         <nav>
           <span>Alef Justin Loresca</span>
+
           <ul>
             <li><a href='#top-header'>Home</a></li>
             <li><a href='#about-section'>About Me</a></li>
@@ -80,6 +83,25 @@ function App() {
             <li><a href='#certifications-section'>Certifications</a></li>
             <li><a href='#contact-section'>Contact</a></li>
           </ul>
+
+          <img
+            className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+            src='./images/Icons/Menu.png'
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            alt='Menu Icon'
+          />
+        
+          <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+            <ul>
+              <li><a href='#top-header' onClick={handleNavClick}>Home</a></li>
+              <li><a href='#about-section' onClick={handleNavClick}>About Me</a></li>
+              <li><a href='#stack-section' onClick={handleNavClick}>Stacks</a></li>
+              <li><a href='#projects-section' onClick={handleNavClick}>Projects</a></li>
+              <li><a href='#certifications-section' onClick={handleNavClick}>Certifications</a></li>
+              <li><a href='#contact-section' onClick={handleNavClick}>Contact</a></li>
+            </ul>
+          </div>
         </nav>
 
         <section id='about-section'>
@@ -101,7 +123,11 @@ function App() {
                 If you're looking for someone eager to learn, easy to work with, and serious about doing good work
               </p>
 
-              <button>Lets Talk &rarr;</button>
+              <button
+
+              >
+                Lets Talk &rarr;
+              </button>
             </section>
 
             <section id='stack-section'>

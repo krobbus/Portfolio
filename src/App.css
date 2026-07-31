@@ -69,7 +69,7 @@ body{
 
             hr{
                 border: none;
-                height: 0.5vh;
+                height: 2px;
                 background-color: #555;
                 width: 100%;
             }
@@ -202,6 +202,71 @@ body{
                 font-size: calc(var(--medium-small-desktop-font) - 10px);
                 span{ margin-left: 0.5vw; }
                 ul{ gap: 2vw; }
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 2.5vw;
+            height: 2.5vw;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        
+            &.open {
+                position: fixed;
+                top: 2vw;
+                right: 2vw;
+                z-index: 1002;
+            }
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: var(--main-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(100%);
+            transition: transform 400ms ease;
+            z-index: 1000;
+        
+            &.open { transform: translateX(0); }
+        
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2vh;
+            
+                li {
+                    list-style-type: none;
+            
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                        font-size: var(--small-desktop-font);
+                        font-family: 'Elsie', serif;
+                
+                        &:hover { transform: scale(1.05); }
+                    }
+                }
+            }
+        }
+        
+        @media (max-width: 1000px) {
+            nav {
+                font-size: calc(var(--medium-small-desktop-font) - 10px);
+                > ul { display: none; }
+                .menu-toggle { display: flex; }
             }
         }
 
@@ -348,6 +413,8 @@ body{
 
                 #about-details-wrapper{
                     #profile-section{
+                        margin-bottom: 5vw;
+                    
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
 
                         p{
@@ -463,6 +530,7 @@ body{
                 #project-list{
                     display: flex;
                     flex-direction: column;
+                    gap: 5vw;
 
                     .project-cards{
                         .project-id{

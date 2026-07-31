@@ -68,7 +68,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0 2vw;
         box-sizing: border-box;
 
         .img-wrapper{
@@ -100,6 +99,7 @@
     #cert-viewport{
       #cert-track{
         flex-direction: column;
+        gap: 5vw;
 
         .cert-slide{
           flex: 1;
