@@ -40,6 +40,10 @@
 
 body{
     background-color: var(--main-color);
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
     width: 100%;
 
     #portfolio-container{
@@ -114,6 +118,7 @@ body{
                     
                     a{
                         color: #000;
+                        font-weight: 800;
                         font-size: var(--small-desktop-font);
                         text-decoration: none;
                     }
@@ -314,9 +319,11 @@ body{
                             span{
                                 padding: 0.5vw 1vw;
                                 border: 0.2vw solid #000;
+                                background-color: var(--main-color);
                                 text-wrap: nowrap;
                                 white-space: none;
                                 font-size: var(--small-desktop-font);
+                                font-weight: 800;
                                 text-align: center;
                             }
                         }
@@ -511,6 +518,7 @@ body{
 
             #email-container {
                 border: 1vw solid #A8D8A6;
+                background-color: var(--main-color);
                 padding: 5vw;
                 height: 100%;
                 width: 100%;
