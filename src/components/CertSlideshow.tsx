@@ -46,7 +46,9 @@ export default function CertSlideshow({ slides }: CertSlideshowProps) {
         >
           {slides.map((slide, i) => (
             <div className='cert-slide' key={slide.src + i}>
-              <img src={slide.src} alt={slide.details || `Certificate ${i + 1}`} />
+              <div className='img-wrapper'>
+                <img src={slide.src} alt={slide.details || `Certificate ${i + 1}`} />
+              </div>
               <p>{slide.details}</p>
             </div>
           ))}

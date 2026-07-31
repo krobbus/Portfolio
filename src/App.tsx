@@ -83,82 +83,88 @@ function App() {
         </nav>
 
         <section id='about-section'>
-          <div id='profile-wrapper'>
+          <div id='about-img-wrapper'>
             <img src='/images/Profile.jpg' alt='profile picture of myself' />
-
-            <p>
-              I'm a web developer who enjoys turning ideas into interfaces people actually want to use.
-              My focus is on modern web development <span>(React, Next.js, and clean, semantic front-end structure)</span> with a growing interest in how good architecture makes everything downstream easier.
-              I care about the details: <span>readable code, thoughtful UI, and building things that feel solid, not just functional</span>.
-              I'm genuine curiosity to every project, a habit of digging until I actually understand why something works, and a steady drive to keep leveling up my craft.
-              Outside of writing code, I'm usually exploring new tools, reading through documentation for fun (yes, really), or finding small ways to make my workflow a little smarter.
-              <br /><br />
-              If you're looking for someone eager to learn, easy to work with, and serious about doing good work
-            </p>
-
-            <button>Lets Talk &rarr;</button>
           </div>
 
-          <section id='stack-section'>
-            <h3>TECH STACK</h3>
+          <div id='about-details-wrapper'>
+            <section id='profile-section'>
+              <h3>WHY ME ?</h3>
 
-            <div className='list-container' id='frontend'>
-              <p>Frontend</p>
+              <p>
+                I'm a web developer who enjoys turning ideas into interfaces people actually want to use.
+                My focus is on modern web development <span>(React, Next.js, and clean, semantic front-end structure)</span> with a growing interest in how good architecture makes everything downstream easier.
+                I care about the details: <span>readable code, thoughtful UI, and building things that feel solid, not just functional</span>.
+                I'm genuine curiosity to every project, a habit of digging until I actually understand why something works, and a steady drive to keep leveling up my craft.
+                Outside of writing code, I'm usually exploring new tools, reading through documentation for fun (yes, really), or finding small ways to make my workflow a little smarter.
+                <br /><br />
+                If you're looking for someone eager to learn, easy to work with, and serious about doing good work
+              </p>
 
-              <div className='pill-container'>
-                <span>HTML</span>
-                <span>SCSS</span>
-                <span>TailwindCSS</span>
-                <span>JavaScript</span>
-                <span>ReactJS</span>
-                <span>NextJS</span>
-                <span>TypeScript</span>
-                <span>Vite</span>
-                <span>Prettier</span>
-                <span>PhaserJS</span>
+              <button>Lets Talk &rarr;</button>
+            </section>
+
+            <section id='stack-section'>
+              <h3>TECH STACK</h3>
+
+              <div className='list-container' id='frontend'>
+                <p>Frontend</p>
+
+                <div className='pill-container'>
+                  <span>HTML</span>
+                  <span>SCSS</span>
+                  <span>TailwindCSS</span>
+                  <span>JavaScript</span>
+                  <span>ReactJS</span>
+                  <span>NextJS</span>
+                  <span>TypeScript</span>
+                  <span>Vite</span>
+                  <span>Prettier</span>
+                  <span>PhaserJS</span>
+                </div>
               </div>
-            </div>
 
-            <div className='list-container' id='backend'>
-              <p>Backend/Database</p>
+              <div className='list-container' id='backend'>
+                <p>Backend/Database</p>
 
-              <div className='pill-container'>
-                <span>NodeJS</span>
-                <span>ExpressJS</span>
-                <span>PostgreSQL</span>
-                <span>MySQL</span>
-                <span>Firebase</span>
-                <span>MariaDB</span>
+                <div className='pill-container'>
+                  <span>NodeJS</span>
+                  <span>ExpressJS</span>
+                  <span>PostgreSQL</span>
+                  <span>MySQL</span>
+                  <span>Firebase</span>
+                  <span>MariaDB</span>
+                </div>
               </div>
-            </div>
 
-            <div className='list-container' id='backend'>
-              <p>DevOps/Dev Tools</p>
+              <div className='list-container' id='backend'>
+                <p>DevOps/Dev Tools</p>
 
-              <div className='pill-container'>
-                <span>Git/Github</span>
-                <span>Github Actions</span>
-                <span>Trello</span>
-                <span>Discord</span>
-                <span>VS Code</span>
-                <span>Vercel</span>
-                <span>Render</span>
-                <span>Neon</span>
-                <span>CronJob</span>
+                <div className='pill-container'>
+                  <span>Git/Github</span>
+                  <span>Github Actions</span>
+                  <span>Trello</span>
+                  <span>Discord</span>
+                  <span>VS Code</span>
+                  <span>Vercel</span>
+                  <span>Render</span>
+                  <span>Neon</span>
+                  <span>CronJob</span>
+                </div>
               </div>
-            </div>
 
-            <div className='list-container' id='backend'>
-              <p>Design Tools</p>
+              <div className='list-container' id='backend'>
+                <p>Design Tools</p>
 
-              <div className='pill-container'>
-                <span>Framer</span>
-                <span>Figma</span>
-                <span>Canva</span>
-                <span>IbisPaint X</span>
+                <div className='pill-container'>
+                  <span>Framer</span>
+                  <span>Figma</span>
+                  <span>Canva</span>
+                  <span>IbisPaint X</span>
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
         </section>
 
         <section id='projects-section'>
@@ -254,10 +260,12 @@ function App() {
       <footer id='contact-section'>
         <h3>KEEP IN TOUCH</h3>
 
-        <div className='contact-containers' id='linkedin-container'><a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>LinkedIn</a></div>
-        <div className='contact-containers' id='instagram-container'><a href='https://www.instagram.com/ajloresca/' target='_blank' rel='noopener noreferrer'>Instagram</a></div>
-        <div className='contact-containers' id='messenger-container'><a href='https://m.me/lorescaalef/' target='_blank' rel='noopener noreferrer'>Messenger</a></div>
-        
+        <div id='contact-containers'>
+          <div id='linkedin-container'><a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>LinkedIn</a></div>
+          <div id='instagram-container'><a href='https://www.instagram.com/ajloresca/' target='_blank' rel='noopener noreferrer'>Instagram</a></div>
+          <div id='messenger-container'><a href='https://m.me/lorescaalef/' target='_blank' rel='noopener noreferrer'>Messenger</a></div>
+        </div>
+
         <div id='email-container'>
           <form onSubmit={handleSubmit}>
             <input id='name-input' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='(OPTIONAL) MY NAME IS' />
