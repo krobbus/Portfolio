@@ -63,7 +63,7 @@ function App() {
         </div>
     
         <div id='contact-pills'>
-          <span><a href='https://drive.google.com/file/d/1y8W_08jx9cdz5p1rH9_ZNFupxxIN0RNd/view?usp=sharing' target='_blank' rel='noopener noreferrer'>Digital Resume &rarr;</a></span>
+          <span><a href='https://drive.google.com/file/d/1y8W_08jx9cdz5p1rH9_ZNFupxxIN0RNd/view?usp=sharing' target='_blank' rel='noopener noreferrer'>E-Resume &rarr;</a></span>
           <span><a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>LinkedIn &rarr;</a></span>
           <span><a href='https://github.com/krobbus' target='_blank' rel='noopener noreferrer'>GitHub &rarr;</a></span>
           <span><a href='#contact-section'>My Social Media &#43;</a></span>

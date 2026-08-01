@@ -65,6 +65,7 @@ body{
                 font-family: 'Playfair Display', serif;
                 font-weight: 500;
                 font-size: var(--small-desktop-font);
+                background-color: var(--main-color);
             }
 
             hr{
@@ -120,9 +121,11 @@ body{
                     a{
                         color: #000;
                         font-weight: 800;
+                        font-family: 'Josefin Sans', serif;
                         font-size: var(--small-desktop-font);
                         text-decoration: none;
                         width: 100%;
+                        user-select: none;
                     }
 
                     &:hover{
@@ -168,6 +171,7 @@ body{
             padding: 1vw;
             font-family: 'Elsie', serif;
             font-size: var(--medium-small-desktop-font);
+            user-select: none;
 
             span{
                 font-weight: 700;
@@ -338,6 +342,7 @@ body{
                         width: 100%;
                         cursor: pointer;
                         transition: ease-in-out 0.2s;
+                        user-select: none;
 
                         &:hover{
                             background-color: var(--main-dark-color);
@@ -418,7 +423,7 @@ body{
                         margin-bottom: 5vw;
                     
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
-
+                        
                         p{
                             font-size: calc(var(--medium-small-desktop-font) - 10px);
                             line-height: calc(var(--line-height) - 10px);
@@ -433,6 +438,8 @@ body{
                     }
 
                     #stack-section{
+                        gap: 4vw;
+
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
 
                         .list-container{
@@ -541,7 +548,6 @@ body{
                     gap: 5vw;
 
                     .project-cards{
-                        border: 1vw solid var(--tertiary-color);
                         padding: 4vw;
 
                         .project-id{
