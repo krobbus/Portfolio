@@ -7,6 +7,9 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 
   .slideshow-nav-btn {
     position: absolute;
