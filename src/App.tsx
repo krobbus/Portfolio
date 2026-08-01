@@ -73,7 +73,7 @@ function App() {
 
       <main>
         <nav>
-          <span>Alef Justin Loresca</span>
+          <span onClick={() => { window.location.hash = 'top-header'; }}>Alef Justin Loresca</span>
 
           <ul>
             <li><a href='#top-header'>Home</a></li>
@@ -85,14 +85,22 @@ function App() {
           </ul>
 
           <img
-            className={`menu-toggle ${menuOpen ? 'open' : ''}`}
+            className={`menu-toggle ${menuOpen ? 'hidden' : ''}`}
             src='./images/Icons/Menu.png'
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            alt='Menu Icon'
+            onClick={() => setMenuOpen(true)}
+            aria-label='Open menu'
+            alt='Menu icon'
           />
         
           <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+            <img
+              className='menu-toggle-inside'
+              src='./images/Icons/Menu.png'
+              onClick={() => setMenuOpen(false)}
+              aria-label='Close menu'
+              alt='Menu icon'
+            />
+
             <ul>
               <li><a href='#top-header' onClick={handleNavClick}>Home</a></li>
               <li><a href='#about-section' onClick={handleNavClick}>About Me</a></li>
@@ -123,9 +131,7 @@ function App() {
                 If you're looking for someone eager to learn, easy to work with, and serious about doing good work
               </p>
 
-              <button
-
-              >
+              <button onClick={() => { window.location.hash = 'contact-section'; }}>
                 Lets Talk &rarr;
               </button>
             </section>
@@ -278,9 +284,9 @@ function App() {
       </main>
 
       <footer id='contact-section'>
-        <h3>KEEP IN TOUCH</h3>
-
         <div id='email-container'>
+          <h3>KEEP IN TOUCH</h3>
+          
           <form onSubmit={handleSubmit}>
             <input id='name-input' type='text' value={name} onChange={(e) => setName(e.target.value)} placeholder='(OPTIONAL) MY NAME IS' />
             <input id='email-input' type='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='MY EMAIL IS' required />
