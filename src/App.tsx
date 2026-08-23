@@ -55,19 +55,42 @@ function App() {
           <span>&copy; 2026</span>
         </div>
 
-        <hr />
-
         <div id='main-header'>
           <h1>ALEF JUSTIN LORESCA</h1>
           <h2>A React Developer, where I enjoy turning complex projects <br /> into intuitive and customer-focused experience.</h2>
         </div>
     
-        <div id='contact-pills'>
-          <span><a href='https://drive.google.com/file/d/1y8W_08jx9cdz5p1rH9_ZNFupxxIN0RNd/view?usp=sharing' target='_blank' rel='noopener noreferrer'>E-Resume &rarr;</a></span>
-          <span><a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>LinkedIn &rarr;</a></span>
-          <span><a href='https://github.com/krobbus' target='_blank' rel='noopener noreferrer'>GitHub &rarr;</a></span>
-          <span><a href='#contact-section'>My Social Media &#43;</a></span>
-          <span><a href='#contact-section'>Email Me &rarr;</a></span>
+        <div id="contact-pills">
+          <div className="pill-wrapper">
+            <div className="social-hint">
+              <div className="floating-icons">
+                <img src="./images/Icons/LinkedIn.png" alt="LinkedIn Icon" className="icon float-1" />
+                <img src="./images/Icons/Github.png" alt="GitHub Icon" className="icon float-2" />
+                <img src="./images/Icons/Messenger.png" alt="Messenger Icon" className="icon float-3" />
+                <img src="./images/Icons/Instagram.png" alt="Instagram Icon" className="icon float-4" />
+              </div>
+
+              <div className="hint-text">
+                <span>Find my socials & <br />email here</span>
+                <span className="arrow">↴</span>
+              </div>
+            </div>
+
+            <a href="#contact-section" className="pill">
+              <span>Email Me</span>
+              <img src="./images/Icons/Email.png" alt="Email Icon" />
+            </a>
+          </div>
+
+          <a 
+            href="https://drive.google.com/file/d/1y8W_08jx9cdz5p1rH9_ZNFupxxIN0RNd/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pill"
+          >
+            <span>E-Resume</span>
+            <img src="./images/Icons/Resume.png" alt="Resume Icon" />
+          </a>
         </div>
       </header>
 
@@ -131,9 +154,17 @@ function App() {
                 If you're looking for someone eager to learn, easy to work with, and serious about doing good work
               </p>
 
-              <button onClick={() => { window.location.hash = 'contact-section'; }}>
-                Lets Talk &rarr;
-              </button>
+              <a 
+                href="#contact-section" 
+                className="lets-talk-btn"
+              >
+                Let's Talk 
+                <img 
+                  src="./images/Icons/Email.png" 
+                  alt="Email Icon" 
+                  style={{ pointerEvents: 'none' }} 
+                />
+              </a>
             </section>
 
             <section id='stack-section'>
@@ -147,11 +178,9 @@ function App() {
                   <span>SCSS</span>
                   <span>TailwindCSS</span>
                   <span>JavaScript</span>
+                  <span>TypeScript</span>
                   <span>ReactJS</span>
                   <span>NextJS</span>
-                  <span>TypeScript</span>
-                  <span>Vite</span>
-                  <span>Prettier</span>
                   <span>PhaserJS</span>
                 </div>
               </div>
@@ -166,6 +195,7 @@ function App() {
                   <span>MySQL</span>
                   <span>Firebase</span>
                   <span>MariaDB</span>
+                  <span>Neon</span>
                 </div>
               </div>
 
@@ -173,15 +203,24 @@ function App() {
                 <p>DevOps/Dev Tools</p>
 
                 <div className='pill-container'>
+                  <span>Vite</span>
+                  <span>Prettier</span>
                   <span>Git/Github</span>
                   <span>Github Actions</span>
-                  <span>Trello</span>
-                  <span>Discord</span>
                   <span>VS Code</span>
+                  <span>Sublime Text</span>
                   <span>Vercel</span>
                   <span>Render</span>
-                  <span>Neon</span>
                   <span>CronJob</span>
+                </div>
+              </div>
+
+              <div className='list-container' id='backend'>
+                <p>Collaboration & Productivity</p>
+
+                <div className='pill-container'>
+                  <span>Trello</span>
+                  <span>Discord</span>
                 </div>
               </div>
 
@@ -298,7 +337,6 @@ function App() {
               required
             >
               <option id='default' value='' disabled hidden>SUBJECT LINE</option>
-              <option value="I'D LIKE TO START A PROJECT">I'D LIKE TO START A PROJECT</option>
               <option value="I'D LIKE TO SET A MEETING">I'D LIKE TO SET A MEETING</option>
               <option value="I'D LIKE TO ASK A QUESTION">I'D LIKE TO ASK A QUESTION</option>
               <option value="I'D LIKE TO MAKE A PROPOSAL">I'D LIKE TO MAKE A PROPOSAL</option>
@@ -319,14 +357,18 @@ function App() {
                   type='submit'
                   disabled={sending}
                 >
-                  &#9993;
                   {sending ? ' Sending...' : ' Send Message'}
+                  <img src='./images/Icons/Email.png' alt='Email Icon' />
                 </button>
               </>
             )}
           </form>
 
           <div id='contact-containers'>
+            <a href="https://github.com/krobbus" target="_blank" rel="noopener noreferrer">
+              <img src="./images/Icons/Github.png" alt="Github Icon" />
+            </a>
+
             <a href='https://www.linkedin.com/in/alefjustinloresca/' target='_blank' rel='noopener noreferrer'>
               <img src='./images/Icons/LinkedIn.png' alt='LinkedIn Icon' />
             </a>
