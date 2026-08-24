@@ -2,7 +2,9 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Analytics } from '@vercel/analytics/react';
 
-import './App.css';
+import './styles/App.css';
+import './styles/MediaSizing.css';
+import './styles/Keyframes.css';
 import './styles/Font.css';
 
 import VideoSlideshow from './components/VideoSlideshow.tsx';
@@ -71,7 +73,7 @@ function App() {
               </div>
 
               <div className="hint-text">
-                <span>Find my socials & <br />email here</span>
+                <span>You can find my socials here</span>
                 <span className="arrow">↴</span>
               </div>
             </div>
@@ -302,7 +304,7 @@ function App() {
                 <span className='project-num'>[Project 04]</span>
                 <h4>PokeDex Research Lab Wiki</h4>
                 <span className='project-category'>Full-Stack Developer, 1st year Project</span>
-                <span className='project-link'>Link: <a href='https://pokedex-research-lab-wiki.vercel.app/' target='_blank' rel='noopener noreferrer'>pokedex-research-lab-wiki.vercel.app/</a></span>
+                <span className='project-link'>Link: <a href='https://pokedex-by-alef.vercel.app/' target='_blank' rel='noopener noreferrer'>pokedex-by-alef.vercel.app/</a></span>
               </div>
 
               <ul className='project-description'>
