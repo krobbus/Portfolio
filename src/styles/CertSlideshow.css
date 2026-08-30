@@ -7,6 +7,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  transform: translateX(2vw);
 
   .slideshow-nav-btn {
     position: absolute;
@@ -19,7 +20,8 @@
     border: none;
     cursor: pointer;
     padding: 1vw;
-    z-index: 2;
+    z-index: 100;
+    user-select: none;
 
     .slideshow-nav-icon {
       background: rgba(0, 0, 0, 0.4);
@@ -47,10 +49,6 @@
     }
   }
 
-  @media (max-width: 1000px){
-    .slideshow-nav-btn { opacity: 0; }
-  }
-
   #cert-viewport{
     width: 100%;
     overflow: hidden;
@@ -63,7 +61,8 @@
       transition: transform 500ms ease;
 
       .cert-slide{
-        flex: 0 0 calc(100% / 4);
+        flex: 0 0 calc(100% / 3);
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -74,11 +73,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 5vw;
+          width: 100%;
+          user-select: none;
 
           img{
             height: auto;
-            width: 30vw;
+            width: 100%;
+            padding: 3vw;
             transform: rotate(-5deg);
           }
         }
@@ -90,33 +91,6 @@
           font-weight: 500;
           text-align: center;
           width: 25vw;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 1000px){
-    #cert-viewport{
-      #cert-track{
-        flex-direction: column;
-        gap: 5vw;
-
-        .cert-slide{
-          flex: 1;
-          flex-direction: column;
-
-          .img-wrapper{
-            img{
-              height: 30vh;
-              width: 100%;
-              transform: rotate(-2deg);
-            }
-          }
-
-          p{
-            font-size: calc(var(--small-desktop-font) - 5px);
-            width: 100%;
-          }
         }
       }
     }

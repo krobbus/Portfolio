@@ -1,25 +1,25 @@
-body{
-    #portfolio-container{
-        @media (max-width: 1000px) {
-
+@media (max-width: 1000px) {
+    body{
+        #portfolio-container{
             /* Header */
             header{
                 padding: 4vw;
 
                 #top-header{ font-size: calc(var(--small-desktop-font) - 5px); }
-                hr{ height: 1px; }
 
-                #main-header{
-                    h1{ font-size: calc(var(--title-desktop-font) - 40px); }
-                    h2{ font-size: calc(var(--small-desktop-font) - 5px); }
-                }
+                .main-wrapper{
+                    #main-header{
+                        h1{ font-size: calc(var(--title-desktop-font) - 40px); }
+                        h2{ font-size: calc(var(--small-desktop-font) - 4px); }
+                    }
 
-                #contact-pills{
-                    .pill-wrapper > .social-hint > .hint-text{ font-size: calc(var(--small-desktop-font) - 5px); }
-                    .pill{
-                        width: calc(var(--pill-width) - 30px);
-                        span{ font-size: calc(var(--small-desktop-font) - 5px); }
-                        img{ width: 15px; }
+                    #contact-pills{
+                        .pill-wrapper > .social-hint > .hint-text{ font-size: calc(var(--small-desktop-font) - 5px); }
+                        .pill{
+                            width: calc(var(--pill-width) - 30px);
+                            font-size: calc(var(--small-desktop-font) - 5px);
+                            img{ width: 15px; }
+                        }
                     }
                 }
             }
@@ -75,7 +75,7 @@ body{
 
                         .list-container{
                             p{ font-size: calc(var(--small-header-desktop-font) - 8px); }
-                            .pill-container{ span{ font-size: calc(var(--small-desktop-font) - 2px); }}
+                            .pill-container{ span{ font-size: calc(var(--small-desktop-font) - 4px); }}
                         }
                     }
                 }
@@ -87,17 +87,54 @@ body{
                 h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
                 
                 #project-list{
-                    display: flex;
-                    flex-direction: column;
-                    gap: 5vw;
-
                     .project-cards{
-                        padding: 4vw;
+                        display: flex;
+                        flex-direction: column;
+                        border: none;
+                        background-color: transparent;
+                        
+                        .project-display{
+                            min-width: 100%;
 
-                        .project-id{
-                            .project-num, .project-category{ font-size: calc(var(--small-desktop-font) - 5px); }
-                            h4{ font-size: calc(var(--small-header-desktop-font) - 10px); }
-                            .project-link{ font-size: calc(var(--small-desktop-font) - 5px); }
+                            .slideshow{
+                                .slideshow-frame{
+                                    .slideshow-caption {
+                                        p { font-size: calc(var(--small-desktop-font) - 5px); }
+                                    }
+
+                                    .slideshow-nav-btn {
+                                        .slideshow-nav-icon {
+                                            padding: 2vw;
+
+                                            img{
+                                                height: 2vw;
+                                                width: 2vw;
+                                                filter: invert(100%);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .slideshow-controls {
+                                    .slideshow-play-btn {
+                                        gap: 1vw;
+                                        font-size: calc(var(--small-desktop-font) - 3px);
+
+                                        img{
+                                            height: 3vw;
+                                            width: 3vw;
+                                        }
+                                    }
+
+                                    .slideshow-counter { font-size: calc(var(--small-desktop-font) - 3px); }
+                                }
+                            }
+
+                            .project-id{
+                                .project-num, .project-category{ font-size: calc(var(--small-desktop-font) - 5px); }
+                                h4{ font-size: calc(var(--small-header-desktop-font) - 10px); }
+                                .project-link{ font-size: calc(var(--small-desktop-font) - 5px); }
+                            }
                         }
 
                         .project-description{ font-size: calc(var(--small-desktop-font) - 5px); }
@@ -108,6 +145,36 @@ body{
             /* Certificate Section */
             #certifications-section{ 
                 h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
+
+                .slideshow-nav-btn { 
+                    opacity: 0; 
+                    pointer-events: none;
+                }
+
+                #cert-viewport{
+                    #cert-track{
+                        flex-direction: column;
+                        gap: 5vw;
+
+                        .cert-slide{
+                            flex: 1;
+                            flex-direction: column;
+
+                            .img-wrapper{
+                                img{
+                                height: 30vh;
+                                width: 100%;
+                                transform: rotate(-2deg);
+                                }
+                            }
+
+                            p{
+                                font-size: calc(var(--small-desktop-font) - 5px);
+                                width: 100%;
+                        }
+                        }
+                    }
+                }
             }
 
             /* Footer */

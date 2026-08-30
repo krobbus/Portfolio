@@ -57,42 +57,42 @@ function App() {
           <span>&copy; 2026</span>
         </div>
 
-        <div id='main-header'>
-          <h1>ALEF JUSTIN LORESCA</h1>
-          <h2>A React Developer, where I enjoy turning complex projects <br /> into intuitive and customer-focused experience.</h2>
-        </div>
-    
-        <div id="contact-pills">
-          <div className="pill-wrapper">
-            <div className="social-hint">
-              <div className="floating-icons">
-                <img src="./images/Icons/LinkedIn.png" alt="LinkedIn Icon" className="icon float-1" />
-                <img src="./images/Icons/Github.png" alt="GitHub Icon" className="icon float-2" />
-                <img src="./images/Icons/Messenger.png" alt="Messenger Icon" className="icon float-3" />
-                <img src="./images/Icons/Instagram.png" alt="Instagram Icon" className="icon float-4" />
+        <div className='main-wrapper'>
+          <div id='main-header'>
+            <h1>ALEF JUSTIN LORESCA</h1>
+            <h2>A React Developer, where I enjoy turning complex projects into intuitive and customer-focused experience.</h2>
+          </div>
+      
+          <div id="contact-pills">
+            <div className="pill-wrapper">
+              <div className="social-hint">
+                <div className="floating-icons">
+                  <img src="./images/Icons/LinkedIn.png" alt="LinkedIn Icon" className="icon float-1" />
+                  <img src="./images/Icons/Github.png" alt="GitHub Icon" className="icon float-2" />
+                  <img src="./images/Icons/Messenger.png" alt="Messenger Icon" className="icon float-3" />
+                  <img src="./images/Icons/Instagram.png" alt="Instagram Icon" className="icon float-4" />
+                </div>
+
+                <div className="hint-text">
+                  <span>You can find my socials here</span>
+                  <span className="arrow">↴</span>
+                </div>
               </div>
 
-              <div className="hint-text">
-                <span>You can find my socials here</span>
-                <span className="arrow">↴</span>
-              </div>
+              <a href="#contact-section" className="pill">
+                Email Me
+              </a>
             </div>
 
-            <a href="#contact-section" className="pill">
-              <span>Email Me</span>
-              <img src="./images/Icons/Email.png" alt="Email Icon" />
+            <a 
+              href="https://drive.google.com/file/d/1acBCQFhimyQaTq0g9gED2f6idU5FO0Ww/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pill"
+            >
+              E-Resume
             </a>
           </div>
-
-          <a 
-            href="https://drive.google.com/file/d/1acBCQFhimyQaTq0g9gED2f6idU5FO0Ww/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pill"
-          >
-            <span>E-Resume</span>
-            <img src="./images/Icons/Resume.png" alt="Resume Icon" />
-          </a>
         </div>
       </header>
 
@@ -148,7 +148,7 @@ function App() {
 
               <p>
                 I'm a web developer who enjoys turning ideas into interfaces people actually want to use.
-                My focus is on modern web development <span>(React, Next.js, and clean, semantic front-end structure)</span> with a growing interest in how good architecture makes everything downstream easier.
+                My focus is on modern web development <span>(React, TypeScript, Next.js, Vite, Bootstrap, and TailwindCSS)</span> with a growing interest in how good architecture makes everything downstream easier.
                 I care about the details: <span>readable code, thoughtful UI, and building things that feel solid, not just functional</span>.
                 I'm genuine curiosity to every project, a habit of digging until I actually understand why something works, and a steady drive to keep leveling up my craft.
                 Outside of writing code, I'm usually exploring new tools, reading through documentation for fun (yes, really), or finding small ways to make my workflow a little smarter.
@@ -161,11 +161,6 @@ function App() {
                 className="lets-talk-btn"
               >
                 Let's Talk 
-                <img 
-                  src="./images/Icons/Email.png" 
-                  alt="Email Icon" 
-                  style={{ pointerEvents: 'none' }} 
-                />
               </a>
             </section>
 
@@ -179,6 +174,7 @@ function App() {
                   <span>HTML</span>
                   <span>SCSS</span>
                   <span>TailwindCSS</span>
+                  <span>Bootstrap</span>
                   <span>JavaScript</span>
                   <span>TypeScript</span>
                   <span>ReactJS</span>
@@ -191,6 +187,7 @@ function App() {
                 <p>Backend/Database</p>
 
                 <div className='pill-container'>
+                  <span>REST API</span>
                   <span>NodeJS</span>
                   <span>ExpressJS</span>
                   <span>PostgreSQL</span>
@@ -202,7 +199,7 @@ function App() {
               </div>
 
               <div className='list-container' id='backend'>
-                <p>DevOps/Dev Tools</p>
+                <p>DevOps/DevTools</p>
 
                 <div className='pill-container'>
                   <span>Vite</span>
@@ -233,7 +230,6 @@ function App() {
                   <span>Framer</span>
                   <span>Figma</span>
                   <span>Canva</span>
-                  <span>IbisPaint X</span>
                 </div>
               </div>
             </section>
@@ -245,13 +241,16 @@ function App() {
           
           <div id='project-list'>
             <div id='project-1' className='project-cards'>
-              <VideoSlideshow slides={project1Slides} />
+              <div className='project-display'>
+                <VideoSlideshow slides={project1Slides} />
 
-              <div className='project-id'>
-                <span className='project-num'>[Project 01]</span>
-                <h4>An AI-Driven 8-Bit Web Game For Personalized College Program Matching and Career Exploration</h4>
-                <span className='project-category'>Lead Full-Stack Developer, Capstone Project</span>
-                <span className='project-link'>Link: <a href='https://krobbus.github.io/8-Bit/' target='_blank' rel='noopener noreferrer'>krobbus.github.io/8-Bit/</a></span>
+              
+                <div className='project-id'>
+                  <span className='project-num'>[Project 01]</span>
+                  <h4>An AI-Driven 8-Bit Web Game For Personalized College Program Matching and Career Exploration</h4>
+                  <span className='project-category'>Lead Full-Stack Developer, Capstone Project</span>
+                  <span className='project-link'>Link: <a href='https://krobbus.github.io/8-Bit/' target='_blank' rel='noopener noreferrer'>krobbus.github.io/8-Bit/</a></span>
+                </div>
               </div>
 
               <ul className='project-description'>
@@ -263,12 +262,14 @@ function App() {
             </div>
 
             <div id='project-2' className='project-cards'>
-              <VideoSlideshow slides={project2Slides} />
+              <div className='project-display'>
+                <VideoSlideshow slides={project2Slides} />
 
-              <div className='project-id'>
-                <span className='project-num'>[Project 02]</span>
-                <h4>Mechanical Engineering Section (MES) Asset Management</h4>
-                <span className='project-category'>Developer, Freelance Project during Internship</span>
+                <div className='project-id'>
+                  <span className='project-num'>[Project 02]</span>
+                  <h4>Mechanical Engineering Section (MES) Asset Management</h4>
+                  <span className='project-category'>Developer, Freelance Project during Internship</span>
+                </div>
               </div>
 
               <ul className='project-description'>
@@ -280,13 +281,15 @@ function App() {
             </div>
 
             <div id='project-3' className='project-cards'>
-              <VideoSlideshow slides={project3Slides} />
+              <div className='project-display'>
+                <VideoSlideshow slides={project3Slides} />
 
-              <div className='project-id'>
-                <span className='project-num'>[Project 03]</span>
-                <h4>FoRent: Rental Property Management System</h4>
-                <span className='project-category'>Lead Full-Stack Developer and Web Designer, 3rd year Project</span>
-                <span className='project-link'>Link: <a href='https://forent-rental.vercel.app/' target='_blank' rel='noopener noreferrer'>forent-rental.vercel.app/</a></span>
+                <div className='project-id'>
+                  <span className='project-num'>[Project 03]</span>
+                  <h4>FoRent: Rental Property Management System</h4>
+                  <span className='project-category'>Lead Full-Stack Developer and Web Designer, 3rd year Project</span>
+                  <span className='project-link'>Link: <a href='https://forent-rental.vercel.app/' target='_blank' rel='noopener noreferrer'>forent-rental.vercel.app/</a></span>
+                </div>
               </div>
 
               <ul className='project-description'>
@@ -298,13 +301,15 @@ function App() {
             </div>
 
             <div id='project-4' className='project-cards'>
-              <VideoSlideshow slides={project4Slides} />
+              <div className='project-display'>
+                <VideoSlideshow slides={project4Slides} />
 
-              <div className='project-id'>
-                <span className='project-num'>[Project 04]</span>
-                <h4>PokeDex Research Lab Wiki</h4>
-                <span className='project-category'>Full-Stack Developer, 1st year Project</span>
-                <span className='project-link'>Link: <a href='https://pokedex-by-alef.vercel.app/' target='_blank' rel='noopener noreferrer'>pokedex-by-alef.vercel.app/</a></span>
+                <div className='project-id'>
+                  <span className='project-num'>[Project 04]</span>
+                  <h4>PokeDex Wiki</h4>
+                  <span className='project-category'>Full-Stack Developer, 1st year Project</span>
+                  <span className='project-link'>Link: <a href='https://pokedex-by-alef.vercel.app/' target='_blank' rel='noopener noreferrer'>pokedex-by-alef.vercel.app/</a></span>
+                </div>
               </div>
 
               <ul className='project-description'>
@@ -360,7 +365,6 @@ function App() {
                   disabled={sending}
                 >
                   {sending ? ' Sending...' : ' Send Message'}
-                  <img src='./images/Icons/Email.png' alt='Email Icon' />
                 </button>
               </>
             )}
