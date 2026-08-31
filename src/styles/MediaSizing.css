@@ -14,11 +14,14 @@
                     }
 
                     #contact-pills{
-                        .pill-wrapper > .social-hint > .hint-text{ font-size: calc(var(--small-desktop-font) - 5px); }
-                        .pill{
-                            width: calc(var(--pill-width) - 30px);
-                            font-size: calc(var(--small-desktop-font) - 5px);
-                            img{ width: 15px; }
+                        .pill-wrapper {
+                            .social-hint > .hint-text{ font-size: calc(var(--small-desktop-font) - 5px);} 
+                            .pill{
+                                padding: 2vw;
+                                border-radius: 2vw;
+                                width: var(--pill-width);
+                                font-size: calc(var(--medium-small-desktop-font) - 10px); 
+                            }
                         }
                     }
                 }
@@ -63,8 +66,6 @@
                             border-radius: 2vw;
                             width: var(--pill-width);
                             font-size: calc(var(--medium-small-desktop-font) - 10px); 
-
-                            img{ width: 15px; }
                         }
                     }
 
@@ -137,7 +138,10 @@
                             }
                         }
 
-                        .project-description{ font-size: calc(var(--small-desktop-font) - 5px); }
+                        .project-description{
+                            .pill-container{span{font-size: calc(var(--small-desktop-font) - 5px);}}
+                            .list-container{font-size: calc(var(--small-desktop-font) - 5px);} 
+                        }
                     }
                 }
             }
@@ -162,16 +166,16 @@
 
                             .img-wrapper{
                                 img{
-                                height: 30vh;
-                                width: 100%;
-                                transform: rotate(-2deg);
+                                    height: 30vh;
+                                    width: 100%;
+                                    transform: rotate(-2deg);
                                 }
                             }
 
                             p{
                                 font-size: calc(var(--small-desktop-font) - 5px);
                                 width: 100%;
-                        }
+                            }
                         }
                     }
                 }
@@ -201,8 +205,6 @@
                             margin: 2vh 0;
                             width: var(--pill-width);
                             padding: 2vw;
-
-                            img { width: 15px; }
                         }
                     }
 

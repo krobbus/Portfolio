@@ -54,6 +54,7 @@ body{
         width: 100%;
 
         header{
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -61,6 +62,27 @@ body{
             height: 100vh;
             width: 100%;
             padding: 0 4vw;
+            overflow: hidden;
+
+            .cloud-bg{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                z-index: 10;
+                pointer-events: none;
+                will-change: transform;
+
+                .cloud-img {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    object-fit: contain;
+                    filter: brightness(1.05) contrast(0.95) drop-shadow(0px 10px 20px rgba(45, 74, 62, 0.12));
+                    transform: translateY(100%);
+                    animation: showCurtain 1.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+                    animation-delay: 1s;
+                }
+            }
 
             #top-header{
                 display: flex;
@@ -79,6 +101,7 @@ body{
                 justify-content: space-around;
                 align-items: center;
                 height: 100%;
+                z-index: 99;
                 
                 #main-header{
                     display: flex;
@@ -108,7 +131,7 @@ body{
                     justify-content: center;
                     align-items: center;
                     gap: 2vw;
-                    padding: 4vw;
+                    width: 100%;
 
                     .pill-wrapper {
                         position: relative;
@@ -166,32 +189,30 @@ body{
                                 }
                             }
                         }
-                    }
 
-                    .pill {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 1vw;
-                        padding: 1vw;
-                        background-color: var(--tertiary-color);
-                        border-radius: 1vw;
-                        width: calc(var(--pill-width) + 10px);
-                        text-align: center;
-                        transition: background-color 0.2s ease-in-out;
-                        text-decoration: none;
-                        cursor: pointer;
-                        color: #000;
-                        font-weight: 800;
-                        font-family: 'Josefin Sans', sans-serif;
-                        font-size: var(--small-desktop-font);
-                        user-select: none;
-                        white-space: nowrap;
-                        transition: color 0.2s ease-in-out;
+                        .pill{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: none;
+                            border-radius: 1vw;
+                            padding: 1vw;
+                            background-color: var(--tertiary-color);
+                            font-size: var(--medium-small-desktop-font);
+                            font-family: 'Elsie', sans-serif;
+                            font-weight: 700;
+                            color: #000;
+                            text-decoration: none;
+                            width: 100%;
+                            min-width: 250px;
+                            cursor: pointer;
+                            transition: ease-in-out 0.2s;
+                            user-select: none;
 
-                        &:hover {
-                            background-color: var(--main-dark-color);
-                            color: #fff;
+                            &:hover{
+                                background-color: var(--main-dark-color);
+                                color: #fff;
+                            }
                         }
                     }
                 }
@@ -203,7 +224,7 @@ body{
             position: sticky;
             z-index: 999;
             background-color: var(--main-color);
-            box-shadow: 0 1vw 1vw -1vw #000;
+            box-shadow: 0 2vw 1vw -1.5vw #000;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -316,6 +337,7 @@ body{
                 top: 0;
                 position: sticky;
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 height: 100%;
@@ -323,11 +345,17 @@ body{
                 padding: 5vw;
                 padding-bottom: 0;
 
-                img{
+                #profile-img{
                     border-radius: 1vw;
                     height: auto;
                     width: 20vw;
-                }             
+                    border: 2px solid var(--tertiary-color);
+                    border-radius: 12px;
+                    box-shadow: 8px 8px 0px var(--tertiary-color);
+                    transition: transform 0.3s ease, filter 0.3s ease;
+
+                    &:hover{ transform: scale(1.02); }
+                }      
             }
 
             #about-details-wrapper{
@@ -378,6 +406,7 @@ body{
                         padding: 1vw;
                         background-color: var(--tertiary-color);
                         font-size: var(--medium-small-desktop-font);
+                        font-family: 'Elsie', sans-serif;
                         font-weight: 700;
                         color: #000;
                         text-decoration: none;
@@ -477,8 +506,6 @@ body{
                 .project-cards{
                     display: flex;
                     flex-direction: row;
-                    justify-content: center;
-                    align-items: center;
                     gap: 4vw;
                     width: 100%;
                     padding: 4vw;
@@ -524,17 +551,45 @@ body{
                     }
 
                     .project-description{
-                        list-style-type: '* ';
-                        font-size: var(--small-desktop-font);
-                        text-align: justify;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        gap: 1vw;
 
-                        li{
-                            margin-bottom: 1vw;
+                        .pill-container{
+                            display: flex;
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 1vw;
 
                             span{
-                                font-weight: 700;
-                                background-color: var(--tertiary-color);
-                                padding: 0 0.2vw;
+                                padding: 0.5vw 1vw;
+                                border: 0.2vw solid var(--main-dark-color);
+                                background-color: var(--main-color);
+                                white-space: nowrap;
+                                border-radius: 5vw;
+                                font-size: calc(var(--small-desktop-font) - 3px);
+                                font-weight: 800;
+                                color: var(--main-dark-color);
+                                text-align: center;
+                            }
+                        }
+                        
+                        .list-container{
+                            list-style-type: '* ';
+                            font-size: var(--small-desktop-font);
+                            text-align: justify;
+
+                            li{
+                                margin-bottom: 1vw;
+
+                                span{
+                                    font-weight: 700;
+                                    background-color: var(--tertiary-color);
+                                    padding: 0 0.2vw;
+                                }
                             }
                         }
                     }
@@ -636,17 +691,20 @@ body{
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        gap: 2vw;
                         border: none;
                         border-radius: 1vw;
                         padding: 1vw;
                         background-color: var(--tertiary-color);
-                        font-family: 'Josefin Sans', serif;
                         font-size: var(--small-desktop-font);
+                        font-family: 'Elsie', sans-serif;
                         font-weight: 700;
+                        color: #000;
+                        text-decoration: none;
                         width: 100%;
+                        min-width: 150px;
                         cursor: pointer;
                         transition: ease-in-out 0.2s;
+                        user-select: none;
 
                         &:hover{
                             background-color: var(--main-dark-color);
