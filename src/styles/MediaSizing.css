@@ -47,36 +47,37 @@
                     position: relative;
                     justify-content: center;
 
-                    img{ width: 40vw; }             
+                    #profile-img{ width: 30vw; }             
                 }
 
                 #about-details-wrapper{
                     #profile-section{
-                        margin-bottom: 5vw;
+                        margin: 5vw 0;
                     
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
                         
                         p{
-                            font-size: calc(var(--medium-small-desktop-font) - 10px);
-                            line-height: calc(var(--line-height) - 10px);
+                            font-size: calc(var(--medium-small-desktop-font) - 5px);
+                            line-height: calc(var(--line-height) - 5px);
                         }
 
                         a{ 
                             padding: 2vw;
                             border-radius: 2vw;
                             width: var(--pill-width);
-                            font-size: calc(var(--medium-small-desktop-font) - 10px); 
+                            font-size: calc(var(--medium-small-desktop-font) - 5px); 
                         }
                     }
 
                     #stack-section{
-                        gap: 4vw;
+                        margin: 5vw 0;
+                        gap: 2vw;
 
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
 
                         .list-container{
-                            p{ font-size: calc(var(--small-header-desktop-font) - 8px); }
-                            .pill-container{ span{ font-size: calc(var(--small-desktop-font) - 4px); }}
+                            p{ font-size: calc(var(--small-header-desktop-font) - 5px); }
+                            .pill-container{ span{ font-size: calc(var(--small-desktop-font) - 2px); }}
                         }
                     }
                 }
@@ -84,15 +85,12 @@
 
             /* Project Section */
             #projects-section{
-                padding: 4vw;
                 h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
                 
                 #project-list{
                     .project-cards{
                         display: flex;
                         flex-direction: column;
-                        border: none;
-                        background-color: transparent;
                         
                         .project-display{
                             min-width: 100%;
@@ -162,18 +160,15 @@
 
                         .cert-slide{
                             flex: 1;
-                            flex-direction: column;
 
                             .img-wrapper{
                                 img{
-                                    height: 30vh;
-                                    width: 100%;
-                                    transform: rotate(-2deg);
+                                    width: 60%;
                                 }
                             }
 
                             p{
-                                font-size: calc(var(--small-desktop-font) - 5px);
+                                font-size: calc(var(--small-desktop-font) - 2px);
                                 width: 100%;
                             }
                         }

@@ -22,6 +22,7 @@
     padding: 1vw;
     z-index: 100;
     user-select: none;
+    transform: translateX(-1vw);
 
     .slideshow-nav-icon {
       background: rgba(0, 0, 0, 0.4);
@@ -79,6 +80,7 @@
           img{
             height: auto;
             width: 100%;
+            object-fit: contain;
             padding: 3vw;
             transform: rotate(-5deg);
           }
