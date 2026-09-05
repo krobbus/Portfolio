@@ -1,0 +1,99 @@
+#projectList{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4vw;
+
+    .projectCards{
+        display: flex;
+        flex-direction: row;
+        gap: 4vw;
+        width: 100%;
+        padding: 4vw;
+        background-color: rgba(193, 216, 166, 0.2);
+        border: 2px solid var(--secondary-dark-color);
+        font-family: 'Playfair Display', serif;
+
+        .projectDisplay{
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+            min-width: 50vw;
+
+            .projectId{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                gap: 0.5vw;
+
+                .projectNum, .projectCategory{
+                    color: var(--main-dark-color);
+                    font-weight: 800;
+                    font-size: var(--small-desktop-font);
+                    font-style: italic;
+                }
+
+                h4{
+                    font-weight: 900;
+                    font-size: var(--small-header-desktop-font);
+                }
+
+                .projectLink{
+                    color: #000;
+                    font-weight: 800;
+                    font-size: var(--small-desktop-font);
+
+                    a{
+                        font-style: italic;
+                        color: var(--main-dark-color); 
+                    }
+                }
+            }
+        }
+
+        .projectDescription{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 1vw;
+
+            .pillContainer{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 1vw;
+
+                span{
+                    padding: 0.5vw 1vw;
+                    border: 0.2vw solid var(--main-dark-color);
+                    background-color: var(--main-color);
+                    white-space: nowrap;
+                    border-radius: 5vw;
+                    font-size: calc(var(--small-desktop-font) - 3px);
+                    font-weight: 800;
+                    color: var(--main-dark-color);
+                    text-align: center;
+                }
+            }
+            
+            .listContainer{
+                list-style-type: '* ';
+                font-size: var(--small-desktop-font);
+                text-align: justify;
+
+                li{
+                    margin-bottom: 1vw;
+
+                    span{
+                        font-weight: 700;
+                        background-color: var(--tertiary-color);
+                        padding: 0 0.2vw;
+                    }
+                }
+            }
+        }
+    }
+}

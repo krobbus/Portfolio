@@ -3,13 +3,13 @@
   --medium-small-desktop-font: 20px;
 }
 
-#cert-container{
+#certContainer{
   position: relative;
   width: 100%;
   overflow: hidden;
   transform: translateX(2vw);
 
-  .slideshow-nav-btn {
+  .slideshowNavBtn {
     position: absolute;
     top: 0;
     height: 100%;
@@ -24,7 +24,7 @@
     user-select: none;
     transform: translateX(-1vw);
 
-    .slideshow-nav-icon {
+    .slideshowNavIcon {
       background: rgba(0, 0, 0, 0.4);
       border-radius: 99vw;
       padding: 1vw;
@@ -50,18 +50,18 @@
     }
   }
 
-  #cert-viewport{
+  #certViewport{
     width: 100%;
     overflow: hidden;
 
-    #cert-track{
+    #certTrack{
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       transition: transform 500ms ease;
 
-      .cert-slide{
+      .certSlide{
         flex: 0 0 calc(100% / 3);
         min-width: 0;
         display: flex;
@@ -70,7 +70,7 @@
         align-items: center;
         box-sizing: border-box;
 
-        .img-wrapper{
+        .imgWrapper{
           display: flex;
           justify-content: center;
           align-items: center;

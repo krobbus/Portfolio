@@ -1,4 +1,4 @@
-import type { CertSlide } from '../components/CertSlideshow.tsx';
+import type { CertSlide } from '../components/Certifications.tsx';
 
 export const certSlides: CertSlide[] = [
   { src: './images/Certificates/Cert1.jpg', details: "Great Learning's Front End Development Certificate, 2024" },

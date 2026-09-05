@@ -7,7 +7,7 @@
   user-select: none;
   font-family: 'Elsie', serif;
 
-  .slideshow-frame {
+  .slideshowFrame {
     position: relative;
     aspect-ratio: 16 / 7;
     background: #000; 
@@ -15,7 +15,7 @@
     box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.15);
     width: 100%;
 
-    .slideshow-image {
+    .slideshowImage {
       position: absolute;
       margin-left: 1vw;
       object-fit: contain;
@@ -27,7 +27,7 @@
       &.active { opacity: 1; }
     }
 
-    .slideshow-caption {
+    .slideshowCaption {
       position: absolute;
       left: 0;
       bottom: 0;
@@ -44,7 +44,7 @@
       }
     }
 
-    .slideshow-nav-btn {
+    .slideshowNavBtn {
       position: absolute;
       top: 0;
       height: 100%;
@@ -57,7 +57,7 @@
       padding: 1vw;
       margin-left: 2vw;
 
-      .slideshow-nav-icon {
+      .slideshowNavIcon {
         background: rgba(0, 0, 0, 0.4);
         border-radius: 99vw;
         padding: 1vw;
@@ -84,13 +84,13 @@
     }
   }
 
-  .slideshow-controls {
+  .slideshowControls {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 2vh;
 
-    .slideshow-play-btn {
+    .slideshowPlayBtn {
       display: flex;
       align-items: center;
       gap: 0.5vw;
@@ -113,11 +113,10 @@
       }
     }
 
-    .slideshow-counter {
+    .slideshowCounter {
       font-family: 'Playfair Display', serif;
       font-size: var(--small-desktop-font);
       color: #6b7280;
     }
   }
-  
 }

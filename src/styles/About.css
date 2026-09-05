@@ -1,0 +1,130 @@
+#imgWrapper{
+    top: 0;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 5vw;
+    padding-bottom: 0;
+
+    img{
+        border-radius: 1vw;
+        height: auto;
+        width: 20vw;
+        border: 2px solid var(--tertiary-color);
+        border-radius: 12px;
+        box-shadow: 8px 8px 0px var(--tertiary-color);
+        transition: transform 0.3s ease, filter 0.3s ease;
+
+        &:hover{ transform: scale(1.02); }
+    }      
+}
+
+#aboutWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    margin: 0 2vw;
+
+    #profileContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+
+        p{
+            font-size: var(--medium-small-desktop-font);
+            line-height: var(--line-height);
+            text-align: justify;
+            margin: 2vw 0;
+
+            span{
+                font-weight: 700;
+                background-color: var(--tertiary-color);
+                padding: 0.2vw;
+            }
+        }
+
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2vw;
+            border: none;
+            border-radius: 1vw;
+            padding: 1vw;
+            background-color: var(--tertiary-color);
+            font-size: var(--medium-small-desktop-font);
+            font-family: 'Playfair Display', sans-serif;
+            font-style: italic;
+            font-weight: 700;
+            color: #222;
+            text-decoration: none;
+            width: 50%;
+            cursor: pointer;
+            transition: ease-in-out 0.2s;
+            user-select: none;
+
+            &:hover{
+                background-color: var(--main-dark-color);
+                color: #fff;
+            }
+        }
+    }
+
+    #stackContainer{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        gap: 1vw;
+
+        #listContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2vw;
+            padding: 1vw;
+
+            .lists{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 1vw; 
+                animation: appear linear;
+                animation-timeline: view();
+                animation-range: entry 0% cover 40%; 
+
+                .pillContainer{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 1vw;
+
+                    span{
+                        padding: 1vw 2vw;
+                        border: 0.2vw solid var(--main-dark-color);
+                        background-color: var(--main-color);
+                        white-space: nowrap;
+                        border-radius: 0.5vw;
+                        font-size: var(--small-desktop-font);
+                        font-weight: 800;
+                        color: var(--main-dark-color);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}

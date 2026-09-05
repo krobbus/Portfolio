@@ -81,7 +81,7 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
 
   return (
     <div className="slideshow">
-      <div className="slideshow-frame">
+      <div className="slideshowFrame">
         {slides.map((slide, i) => (
           isVideo(slide.src) ? (
             <video
@@ -91,35 +91,35 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
               muted
               playsInline
               loop
-              className={`slideshow-image ${i === index ? 'active' : ''}`}
+              className={`slideshowImage ${i === index ? 'active' : ''}`}
             />
           ) : (
             <img
               key={slide.src}
               src={slide.src}
               alt={slide.caption || `Slide ${i + 1}`}
-              className={`slideshow-image ${i === index ? 'active' : ''}`}
+              className={`slideshowImage ${i === index ? 'active' : ''}`}
               draggable={false}
             />
           )
         ))}
 
         {slides[index]?.caption && (
-          <div className="slideshow-caption">
+          <div className="slideshowCaption">
             <p>{slides[index].caption}</p>
           </div>
         )}
 
         {hasMultiple && (
           <>
-            <button onClick={prev} aria-label="Previous slide" className="slideshow-nav-btn prev">
-              <span className="slideshow-nav-icon">
+            <button onClick={prev} aria-label="Previous slide" className="slideshowNavBtn prev">
+              <span className="slideshowNavIcon">
                 <img src='./images/Icons/Left.png' alt='Left Icon' />
               </span>
             </button>
             
-            <button onClick={next} aria-label="Next slide" className="slideshow-nav-btn next">
-              <span className="slideshow-nav-icon">
+            <button onClick={next} aria-label="Next slide" className="slideshowNavBtn next">
+              <span className="slideshowNavIcon">
                 <img src='./images/Icons/Right.png' alt='Right Icon' />
               </span>
             </button>
@@ -127,8 +127,8 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
         )}
       </div>
 
-      <div className="slideshow-controls">
-        <button onClick={() => setPlaying((p) => !p)} className="slideshow-play-btn">
+      <div className="slideshowControls">
+        <button onClick={() => setPlaying((p) => !p)} className="slideshowPlayBtn">
           {playing ? 
             <img src='./images/Icons/Pause.png' alt='Pause Icon' /> : <img src='./images/Icons/Play.png' alt='Play Icon' />
           }
@@ -136,9 +136,7 @@ export default function VideoSlideshow({ slides, autoPlay = true }: VideoSlidesh
         </button>
 
         {hasMultiple && (
-          <span className="slideshow-counter">
-            {index + 1} / {total}
-          </span>
+          <span className="slideshow-counter">{index + 1} / {total}</span>
         )}
       </div>
     </div>
