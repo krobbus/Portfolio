@@ -1,22 +1,22 @@
 @media (max-width: 1000px) {
     body{
-        #portfolio-container{
+        #portfolioContainer{
             /* Header */
             header{
                 padding: 4vw;
 
-                #top-header{ font-size: calc(var(--small-desktop-font) - 5px); }
+                #topHeader{ font-size: calc(var(--small-desktop-font) - 5px); }
 
-                .main-wrapper{
-                    #main-header{
+                .mainWrapper{
+                    #mainHeader{
                         h1{ font-size: calc(var(--title-desktop-font) - 40px); }
                         h2{ font-size: calc(var(--small-desktop-font) - 4px); }
                     }
 
-                    #contact-pills{
-                        .pill-wrapper {
-                            .social-hint > .hint-text{ font-size: calc(var(--small-desktop-font) - 5px);} 
-                            .pill{
+                    #contactPills{
+                        .pillWrapper {
+                            .socialHint > .textHint{ font-size: calc(var(--small-desktop-font) - 5px);} 
+                            button{
                                 padding: 2vw;
                                 border-radius: 2vw;
                                 width: var(--pill-width);
@@ -24,44 +24,48 @@
                             }
                         }
                     }
+
+                    #contactPills > .pillWrapper:nth-child(2){
+                        .textHint { display: none; }
+                    }
                 }
             }
             
             /* Navigation */
             nav{
                 font-size: calc(var(--small-header-desktop-font) - 5px) !important;
-                > ul { display: none; }
-                .menu-toggle { display: flex; }
-                .mobile-menu{ ul{ gap: 2vh; }}
+                > #menuLinks { display: none; }
+                .menuToggle { display: block; }
+                .mobileMenu{ #mobileMenuLinks{ gap: 2vh; }}
             }
 
             /* About Section */
-            #about-section{
+            #aboutSection{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: 5vw;
                 padding: 4vw;
 
-                #about-img-wrapper{
+                #imgWrapper{
                     position: relative;
                     justify-content: center;
 
-                    #profile-img{ width: 30vw; }             
+                    img{ width: 30vw; }             
                 }
 
-                #about-details-wrapper{
-                    #profile-section{
+                #aboutWrapper{
+                    #profileContainer{
                         margin: 5vw 0;
                     
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
                         
                         p{
-                            font-size: calc(var(--medium-small-desktop-font) - 5px);
+                            font-size: calc(var(--medium-small-desktop-font) - 8px);
                             line-height: calc(var(--line-height) - 5px);
                         }
 
-                        a{ 
+                        button{ 
                             padding: 2vw;
                             border-radius: 2vw;
                             width: var(--pill-width);
@@ -69,40 +73,40 @@
                         }
                     }
 
-                    #stack-section{
+                    #stackContainer{
                         margin: 5vw 0;
                         gap: 2vw;
 
                         h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
 
-                        .list-container{
-                            p{ font-size: calc(var(--small-header-desktop-font) - 5px); }
-                            .pill-container{ span{ font-size: calc(var(--small-desktop-font) - 2px); }}
+                        #listContainer{
+                            .lists{ h4{ font-size: calc(var(--small-header-desktop-font) - 5px); }}
+                            .pillContainer{ span{ font-size: calc(var(--small-desktop-font) - 2px); }}
                         }
                     }
                 }
             }
 
             /* Project Section */
-            #projects-section{
+            #projectsSection{
                 h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
                 
-                #project-list{
-                    .project-cards{
+                #projectList{
+                    .projectCards{
                         display: flex;
                         flex-direction: column;
                         
-                        .project-display{
+                        .projectDisplay{
                             min-width: 100%;
 
                             .slideshow{
-                                .slideshow-frame{
-                                    .slideshow-caption {
+                                .slideshowFrame{
+                                    .slideshowCaption {
                                         p { font-size: calc(var(--small-desktop-font) - 5px); }
                                     }
 
-                                    .slideshow-nav-btn {
-                                        .slideshow-nav-icon {
+                                    .slideshowNavBtn {
+                                        .slideshowNavIcon {
                                             padding: 2vw;
 
                                             img{
@@ -114,8 +118,8 @@
                                     }
                                 }
 
-                                .slideshow-controls {
-                                    .slideshow-play-btn {
+                                .slideshowControls {
+                                    .slideshowPlayBtn {
                                         gap: 1vw;
                                         font-size: calc(var(--small-desktop-font) - 3px);
 
@@ -125,43 +129,43 @@
                                         }
                                     }
 
-                                    .slideshow-counter { font-size: calc(var(--small-desktop-font) - 3px); }
+                                    .slideshowCounter { font-size: calc(var(--small-desktop-font) - 3px); }
                                 }
                             }
 
-                            .project-id{
-                                .project-num, .project-category{ font-size: calc(var(--small-desktop-font) - 5px); }
+                            .projectId{
+                                .projectNum, .projectCategory{ font-size: calc(var(--small-desktop-font) - 5px); }
                                 h4{ font-size: calc(var(--small-header-desktop-font) - 10px); }
-                                .project-link{ font-size: calc(var(--small-desktop-font) - 5px); }
+                                .projectLink{ font-size: calc(var(--small-desktop-font) - 5px); }
                             }
                         }
 
-                        .project-description{
-                            .pill-container{span{font-size: calc(var(--small-desktop-font) - 5px);}}
-                            .list-container{font-size: calc(var(--small-desktop-font) - 5px);} 
+                        .projectDescription{
+                            .pillContainer{span{font-size: calc(var(--small-desktop-font) - 5px);}}
+                            .listContainer{font-size: calc(var(--small-desktop-font) - 5px);} 
                         }
                     }
                 }
             }
 
             /* Certificate Section */
-            #certifications-section{ 
+            #certificationsSection{ 
                 h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
 
-                .slideshow-nav-btn { 
+                .slideshowNavBtn { 
                     opacity: 0; 
                     pointer-events: none;
                 }
 
-                #cert-viewport{
-                    #cert-track{
+                #certViewport{
+                    #certTrack{
                         flex-direction: column;
                         gap: 5vw;
 
-                        .cert-slide{
+                        .certSlide{
                             flex: 1;
 
-                            .img-wrapper{
+                            .imgWrapper{
                                 img{
                                     width: 60%;
                                 }
@@ -180,7 +184,7 @@
             footer{
                 padding: 4vw;
 
-                #email-container {  
+                #emailContainer {  
                     h3{ font-size: calc(var(--large-header-desktop-font) - 10px); }
 
                     form{
@@ -203,7 +207,7 @@
                         }
                     }
 
-                    #contact-containers { 
+                    #contactContainers { 
                         gap: 3vw;
 
                         a{                 
