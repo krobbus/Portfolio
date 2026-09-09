@@ -1,6 +1,4 @@
-import type { VideoSlide } from '../components/VideoSlideshow.tsx';
-
-export const project1Slides: VideoSlide[] = [
+export const project1Slides = [
   { src: './images/8-bit/LoginPage.png', caption: 'Login Page' },
   { src: './images/8-bit/Manual.png', caption: 'Game Manual' },
   { src: './images/8-bit/OutdoorScene.png', caption: 'Outdoor Scene' },
@@ -16,11 +14,11 @@ export const project1Slides: VideoSlide[] = [
   { src: './images/8-bit/Dialogue.png', caption: 'NPC Dialogue (Giving Tips and Motivation)' },
 ];
 
-export const project2Slides: VideoSlide[] = [
+export const project2Slides = [
   { src: './images/AssetManagement/AssetManagement.png', caption: 'Asset Management Overview' },
 ];
 
-export const project3Slides: VideoSlide[] = [
+export const project3Slides = [
   { src: './videos/FoRent/LoginRegistration.mp4', caption: 'Login and Registration' },
   { src: './videos/FoRent/Marketplace.mp4', caption: 'Marketplace' },
   { src: './videos/FoRent/Features.mp4', caption: 'Features' },
@@ -30,6 +28,6 @@ export const project3Slides: VideoSlide[] = [
   { src: './videos/FoRent/RequestingMaintenance.mp4', caption: 'Requesting Maintenance' },
 ];
 
-export const project4Slides: VideoSlide[] = [
+export const project4Slides = [
   { src: './videos/Pokedex/PokeDexOverview.mp4', caption: 'PokeDex Overview' },
 ];
