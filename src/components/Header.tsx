@@ -33,10 +33,18 @@ export default function Header({footerRef, projectsRef}: {footerRef: React.RefOb
                     <div className="pillWrapper flex flex-col space-y-2">
                         <div className="socialHint flex items-center space-x-3 text-xs text-slate-400 pl-1">
                             <div className="floatingIcons flex items-center -space-x-2">
-                                <img src="./images/Icons/LinkedIn.png" alt="LinkedIn Icon" className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 invert brightness-200 hover:scale-125 transition-transform" />
-                                <img src="./images/Icons/Github.png" alt="GitHub Icon" className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 invert brightness-200 hover:scale-125 transition-transform" />
-                                <img src="./images/Icons/Messenger.png" alt="Messenger Icon" className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 invert brightness-200 hover:scale-125 transition-transform" />
-                                <img src="./images/Icons/Instagram.png" alt="Instagram Icon" className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 invert brightness-200 hover:scale-125 transition-transform" />
+                                <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
+                                    <img src="./images/Icons/LinkedIn.png" alt="LinkedIn Icon" className="w-full h-full object-contain invert brightness-200" />
+                                </div>
+                                <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
+                                    <img src="./images/Icons/Github.png" alt="GitHub Icon" className="w-full h-full object-contain invert brightness-200" />
+                                </div>
+                                <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
+                                    <img src="./images/Icons/Messenger.png" alt="Messenger Icon" className="w-full h-full object-contain invert brightness-200" />
+                                </div>
+                                <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
+                                    <img src="./images/Icons/Instagram.png" alt="Instagram Icon" className="w-full h-full object-contain invert brightness-200" />
+                                </div>
                             </div>
 
                             <span>you can find my socials here</span>
@@ -55,7 +63,9 @@ export default function Header({footerRef, projectsRef}: {footerRef: React.RefOb
                     <div className="pillWrapper flex flex-col space-y-2 justify-end">
                         <div className="socialHint flex items-center space-x-3 text-xs text-slate-400 pl-1">
                             <div className="floatingIcons flex items-center -space-x-2">
-                                <img src="./images/Icons/Resume.png" alt="LinkedIn Icon" className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 invert brightness-200 hover:scale-125 transition-transform" />
+                                <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
+                                    <img src="./images/Icons/Resume.png" alt="Resume Icon" className="w-full h-full object-contain invert brightness-200" />
+                                </div>
                             </div>
 
                             <span>wanna see my projects?</span>
