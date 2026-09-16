@@ -8,7 +8,7 @@ export default function About({ footerRef, stackRef }: { footerRef: React.RefObj
                     <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
                     
                     <img 
-                        src="/images/Profile.jpg" 
+                        src="/Profile.jpg" 
                         alt="Profile picture of myself" 
                         className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-auto max-w-xs object-cover rounded-3xl border border-white/20 shadow-2xl"
                     />

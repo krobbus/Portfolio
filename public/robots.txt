@@ -2,11 +2,7 @@ User-agent: *
 Allow: /
 User-agent: Googlebot-Image
 
-Disallow: /images/Certificates/
-Disallow: /images/certificates/
-Disallow: /images/8-bit/
-Disallow: /images/AssetManagement/
-Disallow: /images/Icons/
+Disallow: /images/
 Disallow: /videos/
 
 Sitemap: https://alefjustinloresca.vercel.app/sitemap.xml

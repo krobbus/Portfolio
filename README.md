@@ -1,6 +1,6 @@
 # Hey, I'm [Alef Justin Loresca](https://alefjustinloresca.vercel.app/)
 
-A React Developer · Based in Laguna, Philippines.
+A Full-stack Web Developer · Based in Laguna, Philippines.
 
 ## Current Projects
 
