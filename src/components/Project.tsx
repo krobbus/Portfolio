@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { project1Slides, project2Slides, project3Slides, project4Slides } from '../references/ProjectRef.tsx';
 
 interface VideoSlide {
@@ -7,33 +7,86 @@ interface VideoSlide {
 }
 
 function ProjectMediaFrame({ slides }: { slides: VideoSlide[] }) {
+    const [showOverlays, setShowOverlays] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 768;
+        }
+        return true;
+    })
     const [slideIndex, setSlideIndex] = useState(0);
     const totalSlides = slides.length;
 
     const nextSlide = () => {
-    setSlideIndex((prev) => (prev + 1) % totalSlides);
+        setSlideIndex((prev) => (prev + 1) % totalSlides);
     };
 
     const prevSlide = () => {
-    setSlideIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
+        setSlideIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
     };
 
     const currentSlide = slides[slideIndex];
     const isVideo = currentSlide?.src.toLowerCase().endsWith('.mp4');
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        
+        const handleScreenChange = (e: MediaQueryListEvent) => {
+            setShowOverlays(e.matches);
+        };
+        setShowOverlays(mediaQuery.matches);
+
+        mediaQuery.addEventListener('change', handleScreenChange);
+        return () => mediaQuery.removeEventListener('change', handleScreenChange);
+    }, []);
+
     return (
         <div className="relative group rounded-2xl overflow-hidden border border-white/10 bg-black/60 shadow-xl aspect-video flex items-center justify-center">
-            <div className="absolute top-3 left-3 flex items-center justify-between backdrop-blur-lg bg-blue-950/75 border border-white/50 rounded-xl px-3.5 py-1.5 text-xs text-slate-200 z-10 pointer-events-none">
+            <div
+                className={`
+                    absolute top-3 left-3 flex items-center backdrop-blur-lg bg-blue-950/75 border border-white/50 rounded-xl px-2.5 py-1.5 text-xs text-slate-200 z-10 transition-transform duration-300 ease-in-out
+                    ${showOverlays ? 'translate-x-0 opacity-100' : '-translate-x-[calc(100%+16px)] opacity-0 pointer-events-none'}
+                `}
+            >
                 <span className="truncate px-2 py-0.5 font-medium text-slate-300 pr-2">
                     {currentSlide.caption}
                 </span>
             </div>
-            
-            <div className="absolute top-3 right-3 flex items-center justify-between backdrop-blur-lg bg-blue-950/75 border border-white/50 rounded-xl px-3.5 py-1.5 text-xs text-slate-200 z-10 pointer-events-none">
+
+            <div
+                className={`
+                    absolute top-3 right-14 flex items-center backdrop-blur-lg bg-blue-950/75 border border-white/50 rounded-xl px-2.5 py-1.5 text-xs text-slate-200 z-10 transition-transform duration-300 ease-in-out
+                    ${showOverlays ? 'translate-x-0 opacity-100' : 'translate-x-[calc(100%+16px)] opacity-0 pointer-events-none'}
+                `}
+            >
                 <span className="font-mono px-2 py-0.5 rounded-md text-[11px] text-blue-300 font-semibold shrink-0">
                     {slideIndex + 1} / {totalSlides}
                 </span>
             </div>
+
+            <button
+                type="button"
+                onClick={() => setShowOverlays(false)}
+                className="absolute top-3 right-3 z-10 p-2 backdrop-blur-lg bg-blue-950/75 border border-white/50 rounded-xl text-slate-200 hover:bg-blue-900/80 transition-all duration-200 shadow-lg active:scale-95"
+                title="Hide details"
+            >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3l18 18" />
+                </svg>
+            </button>
+
+            {!showOverlays && (
+                <button
+                    type="button"
+                    onClick={() => setShowOverlays(true)}
+                    className="absolute top-3 right-3 z-10 p-2 backdrop-blur-lg bg-blue-950/75 border border-white/50 rounded-xl text-slate-200 hover:bg-blue-900/80 transition-all duration-200 shadow-lg active:scale-95"
+                    title="Show details"
+                >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </button>
+            )}
             
             {isVideo ? (
                 <video
@@ -84,7 +137,7 @@ export default function Project() {
             link: 'https://krobbus.github.io/8-Bit/',
             linkText: 'krobbus.github.io/8-Bit/',
             slides: project1Slides,
-            pills: ['ReactJS', 'PhaserJS', 'Firebase', 'ExpressJS', 'Vite', 'Gemini API'],
+            pills: ['React', 'PhaserJS', 'Firebase', 'Express.js', 'Vite', 'Gemini API'],
             points: [
                 'Lead a team of 3 as the Lead Full-Stack Developer to architect and launch an interactive web game designed to guide students through college program matching and career exploration.',
                 'Engineered an AI-driven recommendation engine by integrating the Gemini API, processing user inputs in real-time to deliver highly personalized college and career pathways.',
@@ -98,7 +151,7 @@ export default function Project() {
             category: 'Developer, Freelance Project during Internship',
             link: null,
             slides: project2Slides,
-            pills: ['ReactJS', 'TypeScript', 'TailwindCSS', 'ExpressJS', 'PostgreSQL', 'JWT'],
+            pills: ['React', 'TypeScript', 'TailwindCSS', 'Express.js', 'PostgreSQL'],
             points: [
                 'Developed a custom asset management dashboard using ReactJS to digitize and streamline the tracking of engineering equipment, measurements, and acquisition costs.',
                 'Engineered a secure data-entry workflow utilizing React Hook Form and standard validation, reducing manual entry errors for critical equipment metrics and pricing.',
@@ -113,7 +166,7 @@ export default function Project() {
             link: 'https://forent-rental.vercel.app/',
             linkText: 'forent-rental.vercel.app/',
             slides: project3Slides,
-            pills: ['ReactJS', 'TypeScript', 'StripeJS', 'PostgreSQL', 'ExpressJS', 'Vite', 'Neon'],
+            pills: ['React', 'TypeScript', 'Stripe.js', 'PostgreSQL', 'Express.js', 'Vite', 'Neon'],
             points: [
                 'Architected a full-stack property management platform using React, TypeScript, Node.js, and Express, creating distinct, feature-rich management for landlords and tenants to manage leases, maintenance, and applications.',
                 'Designed and implemented a relational database schema using PostgreSQL (hosted on Neon) to efficiently handle complex data relationships across users, properties, transactions, and maintenance requests.',
@@ -128,7 +181,7 @@ export default function Project() {
             link: 'https://pokedex-by-alef.vercel.app/',
             linkText: 'pokedex-by-alef.vercel.app/',
             slides: project4Slides,
-            pills: ['ReactJS', 'TypeScript', 'PokeAPI', 'SCSS'],
+            pills: ['React', 'TypeScript', 'PokeAPI', 'SCSS'],
             points: [
                 'Redesigned a retro-inspired Pokedex built with React and TypeScript, refocusing the original 1st-year project into a clean, dedicated data-reference tool by removing unnecessary account and static-page features.',
                 'Integrated the PokeAPI to fetch real-time data for over 1,300 Pokemon, implementing batched loading and secondary API calls to populate detailed modal views with descriptions and abilities.',
@@ -151,12 +204,12 @@ export default function Project() {
                             <ProjectMediaFrame slides={project.slides} />
 
                             <div className="space-y-1">
-                                <div className="flex items-center space-x-3">
-                                    <span className="text-blue-400 font-mono font-bold text-xs sm:text-sm px-2.5 py-0.5 rounded-md bg-blue-500/10 border border-blue-500/20">
+                                <div className="flex flex-col lg:flex-row items-center mb-4 space-x-3">
+                                    <span className="whitespace-nowrap overflow-hidden text-blue-400 font-mono font-bold text-xs sm:text-sm px-2.5 py-0.5 mb-2 lg:mb-0 rounded-md bg-blue-500/10 border border-blue-500/20">
                                         {project.id}
                                     </span>
 
-                                    <span className="text-xs text-slate-400">{project.category}</span>
+                                    <span className="lg:text-left text-center text-xs text-slate-400">{project.category}</span>
                                 </div>
 
                                 <h4 className="text-xl font-bold text-white leading-snug">{project.title}</h4>
