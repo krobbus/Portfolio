@@ -5,12 +5,12 @@ export default function About({ footerRef, stackRef }: { footerRef: React.RefObj
         <div id="aboutWrapper" className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div id="imgWrapper" className="lg:col-span-4 flex justify-center lg:sticky lg:top-28 lg:self-start h-fit">
                 <div className="relative group">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
+                    <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500" />
                     
                     <img 
-                        src="/Profile.jpg" 
+                        src="/Profile.png" 
                         alt="Profile picture of myself" 
-                        className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-auto max-w-xs object-cover rounded-3xl border border-white/20 shadow-2xl"
+                        className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-auto max-w-xs object-cover rounded-3xl shadow-2xl"
                     />
                 </div>
             </div>
