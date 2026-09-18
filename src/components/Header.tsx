@@ -9,6 +9,14 @@ export default function Header({footerRef, projectsRef}: {footerRef: React.RefOb
                 />
             </div>
 
+            <div className="absolute bottom-[30px] left-[20%] opacity-15 pointer-events-none select-none animate-pulse">
+                <img 
+                    src="./images/Icons/Cloud.png" 
+                    alt="Cloud" 
+                    className="w-72 sm:w-96 h-auto blur-sm" 
+                />
+            </div>
+
             <div id="topHeader" className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-4 text-xs sm:text-sm font-medium tracking-wider text-slate-400">
                 <address className="not-italic text-slate-300">Laguna, Philippines</address>
                 <span>&copy; 2026</span>

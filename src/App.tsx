@@ -9,13 +9,26 @@ import Footer from './components/Footer.tsx';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
+  const containerRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const stackRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const certificationsRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLElement>(null);
+
+  const handleScroll = () => {
+    const el = containerRef.current;
+    if (el) {
+      const scrollTop = el.scrollTop;
+      const scrollHeight = el.scrollHeight - el.clientHeight;
+      if (scrollHeight > 0) {
+        setScrollProgress((scrollTop / scrollHeight) * 100);
+      }
+    }
+  };
 
   const scrollToSection = (elementRef: React.RefObject<HTMLElement | null>) => {
     if (elementRef.current) {
@@ -25,8 +38,20 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07090e] text-slate-100 font-sans antialiased selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden h-48 overflow-y-auto scroll-pt-40 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-[#07090e] [&::-webkit-scrollbar-thumb]:bg-blue-400 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-blue-500">
+    <div
+      ref={containerRef}
+      onScroll={handleScroll}
+      className="min-h-screen bg-[#07090e] text-slate-100 font-sans antialiased selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden h-screen overflow-y-auto scroll-pt-40 
+      [&::-webkit-scrollbar]:hidden md:[&::-webkit-scrollbar]:block md:[&::-webkit-scrollbar]:w-2 md:[&::-webkit-scrollbar-track]:bg-[#07090e] md:[&::-webkit-scrollbar-thumb]:bg-blue-400 md:[&::-webkit-scrollbar-thumb]:rounded-full hover:md:[&::-webkit-scrollbar-thumb]:bg-blue-500"
+    >
       <Analytics />
+
+      <div className="fixed top-0 left-0 right-0 h-1 bg-slate-800 z-[60] md:hidden">
+        <div
+          className="h-full bg-gradient-to-r from-blue-500 to-indigo-400 transition-all duration-75 ease-out rounded-r-full"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
 
       <div className="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none z-0" />
       <div className="fixed bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" />

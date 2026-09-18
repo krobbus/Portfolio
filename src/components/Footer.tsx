@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import emailjs from '@emailjs/browser';
 
 export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLElement | null> }) {
+    const [showCloud, setShowCloud] = useState(() => {
+        if (typeof window !== 'undefined') {
+            return window.innerWidth >= 1200;
+        }
+        return true;
+    })
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [number, setNumber] = useState('');
@@ -33,11 +39,33 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
         }
     };
 
+    useEffect(() => {
+        const mediaQuery = window.matchMedia('(min-width: 1200px)');
+        
+        const handleScreenChange = (e: MediaQueryListEvent) => {
+            setShowCloud(e.matches);
+        };
+        setShowCloud(mediaQuery.matches);
+
+        mediaQuery.addEventListener('change', handleScreenChange);
+        return () => mediaQuery.removeEventListener('change', handleScreenChange);
+    }, []);
+
     return(
         <footer id="contactSection" ref={footerRef} className="pt-12 pb-20 border-t border-white/10">
             <div id="emailContainer" className="flex flex-col items-end backdrop-blur-2xl bg-slate-900/40 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-[0_16px_48px_rgba(0,0,0,0.6)] space-y-10 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
                 
+                {showCloud && (
+                    <div className="absolute top-[10%] left-[10px] opacity-15 pointer-events-none select-none animate-pulse">
+                        <img 
+                            src="./images/Icons/Cloud.png" 
+                            alt="Cloud" 
+                            className="w-72 sm:w-96 h-auto blur-sm"
+                        />
+                    </div>
+                )}
+
                 <div className="space-y-2 text-center lg:text-right">
                     <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
                         KEEP IN TOUCH

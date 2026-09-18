@@ -9,7 +9,7 @@ export default function About({ footerRef, stackRef }: { footerRef: React.RefObj
                     
                     <img 
                         src="/Profile.png" 
-                        alt="Profile picture of myself" 
+                        alt="Alef Justin Loresca" 
                         className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-auto max-w-xs object-cover rounded-3xl shadow-2xl"
                     />
                 </div>
