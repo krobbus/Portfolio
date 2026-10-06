@@ -56,7 +56,7 @@ function App() {
       <div className="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[140px] pointer-events-none z-0" />
       <div className="fixed bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" />
 
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl backdrop-blur-xl bg-slate-900/60 border border-white/10 rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all">
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-6xl bg-slate-900/90 border border-white/10 rounded-2xl px-6 py-3.5 flex items-center justify-between shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] transition-all">
         <span 
           onClick={() => scrollToSection(headerRef)}
           className="text-lg font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-blue-400 bg-clip-text text-transparent cursor-pointer hover:opacity-80 transition-opacity"
@@ -65,12 +65,12 @@ function App() {
         </span>
 
         <div id="menuLinks" className="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium text-slate-300">
-          <button onClick={() => scrollToSection(headerRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200">Home</button>
-          <button onClick={() => scrollToSection(aboutRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200">About Me</button>
-          <button onClick={() => scrollToSection(stackRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200">Stacks</button>
-          <button onClick={() => scrollToSection(projectsRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200">Projects</button>
-          <button onClick={() => scrollToSection(certificationsRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200">Certifications</button>
-          <button onClick={() => scrollToSection(footerRef)} className="px-3 py-1.5 rounded-lg text-blue-400 border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 hover:border-blue-400 transition-all duration-200 shadow-sm">Contact</button>
+          <button onClick={() => scrollToSection(headerRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">Home</button>
+          <button onClick={() => scrollToSection(aboutRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">About Me</button>
+          <button onClick={() => scrollToSection(stackRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">Stacks</button>
+          <button onClick={() => scrollToSection(projectsRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">Projects</button>
+          <button onClick={() => scrollToSection(certificationsRef)} className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/10 transition-all duration-200 cursor-pointer">Certifications</button>
+          <button onClick={() => scrollToSection(footerRef)} className="px-3 py-1.5 rounded-lg text-blue-400 border border-blue-500/30 bg-blue-500/10 hover:bg-blue-500/20 hover:border-blue-400 transition-all duration-200 shadow-sm cursor-pointer">Contact</button>
         </div>
 
         <button
@@ -80,14 +80,14 @@ function App() {
         >
           <img
             className="w-6 h-6 invert brightness-200"
-            src="./images/Icons/Menu.png"
+            src="./images/icons/Menu.png"
             alt="Menu icon"
           />
         </button>
       </nav>
 
       {menuOpen && (
-        <div className="fixed inset-0 top-0 left-0 w-screen h-screen h-[100dvh] z-50 bg-black/90 backdrop-blur-2xl flex flex-col justify-center items-center p-8 space-y-6 md:hidden animate-fade-in">
+        <div className="fixed inset-0 top-0 left-0 w-screen h-screen h-[100dvh] z-50 bg-black/90 bg-slate-900/90 flex flex-col justify-center items-center p-8 space-y-6 md:hidden animate-fade-in">
           <button
             className="absolute w-20 top-10 right-10 p-2 rounded-full bg-white/10 border border-white/20 text-white"
             onClick={() => setMenuOpen(false)}
