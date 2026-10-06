@@ -52,14 +52,40 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
     }, []);
 
     return(
-        <footer id="contactSection" ref={footerRef} className="pt-12 pb-20 border-t border-white/10">
-            <div id="emailContainer" className="flex flex-col items-end backdrop-blur-2xl bg-slate-900/40 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-[0_16px_48px_rgba(0,0,0,0.6)] space-y-10 relative overflow-hidden">
+        <footer id="contactSection" ref={footerRef} className="pt-12 pb-20 border-t border-white/10 flex flex-col gap-4">
+            <div id="contactContainers" className="w-full flex wrap justify-center lg:justify-end items-center gap-3 sm:gap-4">
+                {[
+                    { href: 'https://github.com/krobbus', alt: 'Github', icon: './images/icons/Github.png', text: 'Github' },
+                    { href: 'https://www.linkedin.com/in/alefjustinloresca/', alt: 'LinkedIn', icon: './images/icons/LinkedIn.png', text: 'LinkedIn' },
+                    { href: 'https://www.instagram.com/ajloresca/', alt: 'Instagram', icon: './images/icons/Instagram.png', text: 'Instagram' },
+                    { href: 'https://m.me/lorescaalef/', alt: 'Messenger', icon: './images/icons/Messenger.png', text: 'Messenger' },
+                ].map((social, idx) => (
+                    <a
+                        key={idx}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-300 
+                        hover:text-white hover:border-blue-400/50 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] 
+                        hover:-translate-y-0.5 flex items-center gap-2.5 transition-all duration-200 shadow-md group cursor-pointer"
+                    >
+                        <img 
+                            src={social.icon} 
+                            alt={social.alt} 
+                            className="w-4 h-4 sm:w-4.5 sm:h-4.5 invert brightness-200 group-hover:scale-110 transition-transform duration-200" 
+                        /> 
+                        <span>{social.text}</span>
+                    </a>
+                ))}
+            </div>
+            
+            <div id="emailContainer" className="flex flex-col items-end bg-slate-900/90 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-[0_16px_48px_rgba(0,0,0,0.6)] space-y-10 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
                 
                 {showCloud && (
                     <div className="absolute top-[10%] left-[10px] opacity-15 pointer-events-none select-none animate-pulse">
                         <img 
-                            src="./images/Icons/Cloud.png" 
+                            src="./images/icons/Cloud.png" 
                             alt="Cloud" 
                             className="w-72 sm:w-96 h-auto blur-sm"
                         />
@@ -82,7 +108,7 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="(OPTIONAL) MY NAME IS"
-                            className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none backdrop-blur-md transition-all text-sm"
+                            className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all text-sm"
                         />
 
                         <input
@@ -92,7 +118,7 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="MY EMAIL IS *"
                             required
-                            className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none backdrop-blur-md transition-all text-sm"
+                            className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all text-sm"
                         />
                     </div>
 
@@ -102,7 +128,7 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
                         value={number}
                         onChange={(e) => setNumber(e.target.value)}
                         placeholder="(OPTIONAL) MY PHONE NUMBER IS"
-                        className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none backdrop-blur-md transition-all text-sm"
+                        className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all text-sm"
                     />
 
                     <select
@@ -135,7 +161,7 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
                                 onChange={(e) => setMessage(e.target.value)}
                                 placeholder="I'D LIKE TO TALK ABOUT *"
                                 required
-                                className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none backdrop-blur-md transition-all text-sm resize-none"
+                                className="w-full bg-white/5 border border-white/10 focus:border-blue-400 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 outline-none transition-all text-sm resize-none"
                             />
 
                             <button
@@ -149,27 +175,8 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
                     )}
                 </form>
 
-                <div className="w-full border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div className="w-full border-t border-white/10 pt-8">
                     <span className="text-slate-400 text-sm">&copy; 2026 Alef Justin Loresca. All rights reserved.</span>
-
-                    <div id="contactContainers" className="flex items-center space-x-4">
-                        {[
-                            { href: 'https://github.com/krobbus', alt: 'Github', icon: './images/Icons/Github.png' },
-                            { href: 'https://www.linkedin.com/in/alefjustinloresca/', alt: 'LinkedIn', icon: './images/Icons/LinkedIn.png' },
-                            { href: 'https://www.instagram.com/ajloresca/', alt: 'Instagram', icon: './images/Icons/Instagram.png' },
-                            { href: 'https://m.me/lorescaalef/', alt: 'Messenger', icon: './images/Icons/Messenger.png' },
-                        ].map((social, idx) => (
-                            <a
-                                key={idx}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-400/50 hover:bg-white/10 transition-all duration-300 hover:scale-110 shadow-md group"
-                            >
-                                <img src={social.icon} alt={social.alt} className="w-5 h-5 invert brightness-200 group-hover:brightness-100 transition-all" />
-                            </a>
-                        ))}
-                    </div>
                 </div>
             </div>
         </footer>
