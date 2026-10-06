@@ -31,7 +31,7 @@ export default function Certifications({ slides = certSlides }: { slides?: CertS
   };
 
   return (
-    <div id="certContainer" className="relative backdrop-blur-2xl bg-slate-900/40 border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+    <div id="certContainer" className="relative bg-slate-900/90 border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
       <div 
         id="certViewport" 
         className="overflow-hidden rounded-2xl cursor-grab active:cursor-grabbing select-none"
@@ -66,9 +66,9 @@ export default function Certifications({ slides = certSlides }: { slides?: CertS
           onClick={prev} 
           aria-label="Previous certificate" 
           className="p-3 rounded-full bg-white/10 border border-white/20
-          hover:bg-white/20 hover:border-blue-400 text-white backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
+          hover:bg-white/20 hover:border-blue-400 text-white bg-slate-900/90 transition-all duration-300 active:scale-95 cursor-pointer"
         >
-          <img src="./images/Icons/Left.png" alt="Left Icon" className="w-5 h-5 invert brightness-200" />
+          <img src="./images/icons/Left.png" alt="Left Icon" className="w-5 h-5 invert brightness-200" />
         </button>
 
         <div className="flex space-x-2">
@@ -88,9 +88,9 @@ export default function Certifications({ slides = certSlides }: { slides?: CertS
           onClick={next} 
           aria-label="Next certificate" 
           className="p-3 rounded-full bg-white/10 border border-white/20
-          hover:bg-white/20 hover:border-blue-400 text-white backdrop-blur-md transition-all duration-300 active:scale-95 cursor-pointer"
+          hover:bg-white/20 hover:border-blue-400 text-white bg-slate-900/90 transition-all duration-300 active:scale-95 cursor-pointer"
         >
-          <img src="./images/Icons/Right.png" alt="Right Icon" className="w-5 h-5 invert brightness-200" />
+          <img src="./images/icons/Right.png" alt="Right Icon" className="w-5 h-5 invert brightness-200" />
         </button>
       </div>
     </div>

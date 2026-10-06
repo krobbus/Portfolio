@@ -26,7 +26,7 @@ export default function Stack({ stackRef }: { stackRef: React.RefObject<HTMLElem
                 ].map((category, idx) => (
                     <div
                         key={idx}
-                        className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3
+                        className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3
                         hover:border-blue-500/30 transition-all duration-300"
                     >
                         <h4 className="text-sm font-semibold text-blue-400 tracking-wider uppercase">{category.title}</h4>
