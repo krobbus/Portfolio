@@ -16,17 +16,17 @@ export default function About({ footerRef, stackRef }: { footerRef: React.RefObj
             </div>
 
             <div className="lg:col-span-8 space-y-12">
-                <div id="profileContainer" className="backdrop-blur-2xl bg-slate-900/40 border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
+                <div id="profileContainer" className="bg-slate-900/90 border border-white/10 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xl">
                     <h3 className="text-2xl font-extrabold text-white tracking-wide border-b border-white/10 pb-3 flex items-center space-x-2">
                         WHY ME ?
                     </h3>
 
                     <p className="text-slate-300 leading-relaxed text-base sm:text-lg">
-                        I'm a web developer who enjoys turning ideas into interfaces people actually want to use.
-                        My focus is on modern web development <span className="text-blue-300 font-semibold">(React, TypeScript, Next.js, Vite, Bootstrap, and TailwindCSS)</span> with a growing interest in how good architecture makes everything downstream easier.
+                        I'm a Full Stack Web Developer who enjoys turning ideas into interfaces people actually want to use.
+                        My focus is on modern web development <span className="text-blue-300 font-semibold">(React, TypeScript, Express.js, TailwindCSS, PostgreSQL, and MongoDB)</span> with a growing interest in how good architecture makes everything downstream easier.
                         I care about the details: <span className="text-blue-300 font-semibold">readable code, thoughtful UI, and building things that feel solid, not just functional</span>.
                         I bring genuine curiosity to every project, a habit of digging until I actually understand why something works, and a steady drive to keep leveling up my craft.
-                        Outside of writing code, I'm usually exploring new tools, reading through documentation for fun (yes, really), or finding small ways to make my workflow a little smarter.
+                        Outside of writing code, I'm usually exploring new tools for fun (yes, really), or finding small ways to make my workflow a little smarter.
                         <br /><br />
                         <span className="italic text-slate-400">If you're looking for someone eager to learn, easy to work with, and serious about doing good work</span>
                     </p>
@@ -34,7 +34,7 @@ export default function About({ footerRef, stackRef }: { footerRef: React.RefObj
                     <button 
                         onClick={() => footerRef.current?.scrollIntoView({ behavior: 'smooth' })}
                         className="w-full px-6 py-3.5 rounded-2xl bg-gradient-to-r from-blue-500/20 to-blue-500/20
-                        hover:from-blue-500/30 hover:to-blue-500/30 border border-blue-500/40 text-blue-200 font-medium backdrop-blur-xl shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:border-blue-400 hover:scale-[1.02]
+                        hover:from-blue-500/30 hover:to-blue-500/30 border border-blue-500/40 text-blue-200 font-medium bg-slate-900/90 shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:border-blue-400 hover:scale-[1.02]
                         active:scale-95 transition-all duration-300 text-sm cursor-pointer"
                     >
                         Let's Connect
