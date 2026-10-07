@@ -38,16 +38,16 @@ export default function Header({footerRef, projectsRef}: {footerRef: React.RefOb
                         <div className="socialHint flex items-center space-x-3 text-xs text-slate-400 pl-1">
                             <div className="floatingIcons flex items-center -space-x-2">
                                 <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
-                                    <img src="./images/icons/LinkedIn.png" alt="LinkedIn Icon" className="w-full h-full object-contain invert brightness-200" />
+                                    <i className="fa-brands fa-facebook-messenger"></i>
                                 </div>
                                 <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
-                                    <img src="./images/icons/Github.png" alt="GitHub Icon" className="w-full h-full object-contain invert brightness-200" />
+                                    <i className="fa-brands fa-square-instagram"></i>
                                 </div>
                                 <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
-                                    <img src="./images/icons/Messenger.png" alt="Messenger Icon" className="w-full h-full object-contain invert brightness-200" />
+                                    <i className="fa-brands fa-github"></i>
                                 </div>
                                 <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
-                                    <img src="./images/icons/Instagram.png" alt="Instagram Icon" className="w-full h-full object-contain invert brightness-200" />
+                                    <i className="fa-brands fa-linkedin"></i>
                                 </div>
                             </div>
 
@@ -68,7 +68,7 @@ export default function Header({footerRef, projectsRef}: {footerRef: React.RefOb
                         <div className="socialHint flex items-center space-x-3 text-xs text-slate-400 pl-1">
                             <div className="floatingIcons flex items-center -space-x-2">
                                 <div className="w-6 h-6 p-1 rounded-full bg-slate-800 border border-white/20 hover:scale-125 transition-transform flex items-center justify-center">
-                                    <img src="./images/icons/Resume.png" alt="Resume Icon" className="w-full h-full object-contain invert brightness-200" />
+                                    <i className="fa-solid fa-folder-open"></i>
                                 </div>
                             </div>
 

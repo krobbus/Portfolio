@@ -58,7 +58,7 @@ function ProjectMediaFrame({ slides }: { slides: VideoSlide[] }) {
                         className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/80 border border-white/20 text-white
                         hover:bg-slate-800 hover:border-blue-400 transition-all duration-200 opacity-80 group-hover:opacity-100 active:scale-95 z-20 cursor-pointer shadow-lg"
                     >
-                        <img src="./images/icons/Left.png" alt="Previous" className="w-4 h-4 invert brightness-200" />
+                        <i className="fa-solid fa-chevron-left"></i>
                     </button>
                 )}
 
@@ -69,7 +69,7 @@ function ProjectMediaFrame({ slides }: { slides: VideoSlide[] }) {
                         className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-slate-900/80 border border-white/20 text-white
                         hover:bg-slate-800 hover:border-blue-400 transition-all duration-200 opacity-80 group-hover:opacity-100 active:scale-95 z-20 cursor-pointer shadow-lg"
                     >
-                        <img src="./images/icons/Right.png" alt="Next" className="w-4 h-4 invert brightness-200" />
+                        <i className="fa-solid fa-chevron-right"></i>
                     </button>
                 )}
             </div>

@@ -54,29 +54,53 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
     return(
         <footer id="contactSection" ref={footerRef} className="pt-12 pb-20 border-t border-white/10 flex flex-col gap-4">
             <div id="contactContainers" className="w-full flex wrap justify-center lg:justify-end items-center gap-3 sm:gap-4">
-                {[
-                    { href: 'https://github.com/krobbus', alt: 'Github', icon: './images/icons/Github.png', text: 'Github' },
-                    { href: 'https://www.linkedin.com/in/alefjustinloresca/', alt: 'LinkedIn', icon: './images/icons/LinkedIn.png', text: 'LinkedIn' },
-                    { href: 'https://www.instagram.com/ajloresca/', alt: 'Instagram', icon: './images/icons/Instagram.png', text: 'Instagram' },
-                    { href: 'https://m.me/lorescaalef/', alt: 'Messenger', icon: './images/icons/Messenger.png', text: 'Messenger' },
-                ].map((social, idx) => (
-                    <a
-                        key={idx}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-300 
-                        hover:text-white hover:border-blue-400/50 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] 
-                        hover:-translate-y-0.5 flex items-center gap-2.5 transition-all duration-200 shadow-md group cursor-pointer"
-                    >
-                        <img 
-                            src={social.icon} 
-                            alt={social.alt} 
-                            className="w-4 h-4 sm:w-4.5 sm:h-4.5 invert brightness-200 group-hover:scale-110 transition-transform duration-200" 
-                        /> 
-                        <span>{social.text}</span>
-                    </a>
-                ))}
+                <a
+                    href="https://github.com/krobbus"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-300 
+                    hover:text-white hover:border-blue-400/50 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] 
+                    hover:-translate-y-0.5 flex items-center gap-2.5 transition-all duration-200 shadow-md group cursor-pointer"
+                >
+                    <i className="fa-brands fa-github"></i>
+                    <span>Github</span>
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/alefjustinloresca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-300 
+                    hover:text-white hover:border-blue-400/50 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] 
+                    hover:-translate-y-0.5 flex items-center gap-2.5 transition-all duration-200 shadow-md group cursor-pointer"
+                >
+                    <i className="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+
+                <a
+                    href="https://www.instagram.com/ajloresca/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-300 
+                    hover:text-white hover:border-blue-400/50 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] 
+                    hover:-translate-y-0.5 flex items-center gap-2.5 transition-all duration-200 shadow-md group cursor-pointer"
+                >
+                    <i className="fa-brands fa-square-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+
+                <a
+                    href="https://m.me/lorescaalef/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-white/10 text-xs sm:text-sm font-medium text-slate-300 
+                    hover:text-white hover:border-blue-400/50 hover:bg-blue-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] 
+                    hover:-translate-y-0.5 flex items-center gap-2.5 transition-all duration-200 shadow-md group cursor-pointer"
+                >
+                    <i className="fa-brands fa-facebook-messenger"></i>
+                    <span>Messenger</span>
+                </a>
             </div>
             
             <div id="emailContainer" className="flex flex-col items-end bg-slate-900/90 border border-white/10 rounded-3xl p-8 sm:p-12 shadow-[0_16px_48px_rgba(0,0,0,0.6)] space-y-10 relative overflow-hidden">

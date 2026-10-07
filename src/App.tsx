@@ -74,15 +74,11 @@ function App() {
         </div>
 
         <button
-          className="md:hidden text-slate-300 hover:text-white focus:outline-none p-1 rounded-lg bg-white/5 border border-white/10"
+          className="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-white/5 border border-white/10"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle Menu"
         >
-          <img
-            className="w-6 h-6 invert brightness-200"
-            src="./images/icons/Menu.png"
-            alt="Menu icon"
-          />
+          <i className="fa-solid fa-bars"></i>
         </button>
       </nav>
 
