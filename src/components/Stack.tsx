@@ -9,19 +9,19 @@ export default function Stack({ stackRef }: { stackRef: React.RefObject<HTMLElem
                 {[
                 {
                     title: 'Frontend Development',
-                    items: ['HTML5', 'CSS3', 'SCSS', 'Styled Components', 'JavaScript', 'TypeScript', 'React', 'PhaserJS', 'React Hook Form', 'React Router', 'Tailwind CSS', 'Bootstrap', 'Vite']
+                    items: ['HTML5', 'CSS3', 'SASS', 'JavaScript', 'PhaserJS', 'React', 'React Hooks', 'React Router', 'TypeScript', 'Tailwind CSS', 'Vite']
                 },
                 {
                     title: 'Backend and Databases',
                     items: ['Node.js', 'Express.js', 'PostgreSQL', 'MySQL', 'MariaDB', 'Firebase', 'Neon']
                 },
                 {
-                    title: 'DevOps and Tools',
-                    items: ['Git/Github', 'Github Actions', 'Vercel', 'Render', 'CronJob', 'VS Code', 'Prettier', 'Notion']
+                    title: 'APIs and LLMs',
+                    items: ['Gemini API', 'Stripe API', 'RESTful API design', 'Google Gemini', 'Claude', 'GitHub Copilot']
                 },
                 {
-                    title: 'Design and Collaborations',
-                    items: ['Figma', 'Framer', 'Canva', 'IbisPaint X', 'Trello', 'Discord']
+                    title: 'DevOps and Tools',
+                    items: ['Git/Github', 'Github Actions', 'Vercel', 'Render', 'CronJob', 'Prettier', 'Notion']
                 }
                 ].map((category, idx) => (
                     <div
@@ -29,7 +29,7 @@ export default function Stack({ stackRef }: { stackRef: React.RefObject<HTMLElem
                         className="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3
                         hover:border-blue-500/30 transition-all duration-300"
                     >
-                        <h4 className="text-sm font-semibold text-blue-400 tracking-wider uppercase">{category.title}</h4>
+                        <h4 className="text-md font-semibold text-blue-400 tracking-wider">{category.title}</h4>
 
                         <div className="pillContainer flex flex-wrap gap-2">
                             {category.items.map((item) => (
