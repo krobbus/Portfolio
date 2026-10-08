@@ -74,7 +74,7 @@ function App() {
         </div>
 
         <button
-          className="md:hidden text-slate-300 hover:text-white focus:outline-none p-2 rounded-lg bg-white/5 border border-white/10"
+          className="md:hidden text-slate-300 hover:text-white focus:outline-none cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle Menu"
         >
@@ -85,11 +85,11 @@ function App() {
       {menuOpen && (
         <div className="fixed inset-0 top-0 left-0 w-screen h-screen h-[100dvh] z-50 bg-black/90 bg-slate-900/90 flex flex-col justify-center items-center p-8 space-y-6 md:hidden animate-fade-in">
           <button
-            className="absolute w-20 top-10 right-10 p-2 rounded-full bg-white/10 border border-white/20 text-white"
+            className="absolute top-10 right-10 text-slate-300 text-lg cursor-pointer hover:text-white focus:outline-none"
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
-            ✕
+            <i className="fa-solid fa-xmark"></i>
           </button>
 
           <div id="mobileMenuLinks" className="flex flex-col items-center space-y-6 text-xl font-medium text-slate-200">
