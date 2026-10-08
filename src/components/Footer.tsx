@@ -53,7 +53,7 @@ export default function Footer({ footerRef }: { footerRef: React.RefObject<HTMLE
 
     return(
         <footer id="contactSection" ref={footerRef} className="pt-12 pb-20 border-t border-white/10 flex flex-col gap-4">
-            <div id="contactContainers" className="w-full flex wrap justify-center lg:justify-end items-center gap-3 sm:gap-4">
+            <div id="contactContainers" className="w-full flex flex-wrap justify-center lg:justify-end items-center gap-3 sm:gap-4">
                 <a
                     href="https://github.com/krobbus"
                     target="_blank"
