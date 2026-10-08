@@ -19,7 +19,7 @@ export const projects = [
         category: 'Full-Stack Developer, Internship Project',
         link: null,
         slides: slides.projectPlaceholder,
-        pills: ['Full-Stack Development', 'React', 'Node.js', 'Express.js', 'MongoDB'],
+        pills: ['Full Stack Development', 'React', 'Node.js', 'Express.js', 'MongoDB'],
         points: [
             'Architected and built a complete platform for managing courses, learners, and coursework with React, Node.js, Express.js, and MongoDB',
             'Implemented role-based authentication and authorization, a dashboard for modules, quizzes, and assignments, and student progress tracking.'
@@ -32,7 +32,7 @@ export const projects = [
         link: 'https://krobbus.github.io/8-Bit/',
         linkText: 'krobbus.github.io/8-Bit/',
         slides: slides.project4Slides,
-        pills: ['Full-Stack Development', 'React', 'TypeScript', 'PhaserJS', 'Firebase', 'Gemini API'],
+        pills: ['Full Stack Development', 'Web Game', 'React', 'TypeScript', 'PhaserJS', 'Firebase', 'Gemini API'],
         points: [
             'Lead a team of 3 as the Lead Full-Stack Developer to architect and launch an interactive web game designed to guide students through college program matching and career exploration.',
             'Engineered an AI-driven recommendation engine by integrating the Gemini API, processing user inputs in real-time to deliver highly personalized college and career pathways.',
@@ -46,7 +46,7 @@ export const projects = [
         category: 'Full Stack Developer, 3-Month Project Based during Internship',
         link: null,
         slides: slides.project3Slides,
-        pills: ['Full-Stack Development', 'React', 'TypeScript', 'TailwindCSS', 'Express.js', 'PostgreSQL'],
+        pills: ['Full Stack Development', 'React', 'TypeScript', 'TailwindCSS', 'Express.js', 'PostgreSQL'],
         points: [
             'Developed a custom asset management dashboard using ReactJS to digitize and streamline the tracking of engineering equipment, measurements, and acquisition costs.',
             'Engineered a secure data-entry workflow utilizing React Hook Form and standard validation, reducing manual entry errors for critical equipment metrics and pricing.',
@@ -61,7 +61,7 @@ export const projects = [
         link: 'https://forent-rental.vercel.app/',
         linkText: 'forent-rental.vercel.app/',
         slides: slides.project2Slides,
-        pills: ['Full-Stack Development', 'React', 'TypeScript', 'Stripe.js', 'PostgreSQL', 'Express.js', 'Neon'],
+        pills: ['Full Stack Development', 'React', 'TypeScript', 'Stripe.js', 'PostgreSQL', 'Express.js', 'Neon'],
         points: [
             'Architected a full-stack property management platform using React, TypeScript, Node.js, and Express, creating distinct, feature-rich management for landlords and tenants to manage leases, maintenance, and applications.',
             'Designed and implemented a relational database schema using PostgreSQL (hosted on Neon) to efficiently handle complex data relationships across users, properties, transactions, and maintenance requests.',
