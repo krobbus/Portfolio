@@ -26,7 +26,7 @@ export default function About({ footerRef, stackRef }: { footerRef: React.RefObj
                         My focus is on modern web development <span className="text-blue-300 font-semibold">(React, TypeScript, Express.js, TailwindCSS, PostgreSQL, and MongoDB)</span> with a growing interest in how good architecture makes everything downstream easier.
                         I care about the details: <span className="text-blue-300 font-semibold">readable code, thoughtful UI, and building things that feel solid, not just functional</span>.
                         I bring genuine curiosity to every project, a habit of digging until I actually understand why something works, and a steady drive to keep leveling up my craft.
-                        Outside of writing code, I'm usually exploring new tools for fun (yes, really), or finding small ways to make my workflow a little smarter.
+                        Outside of writing code, I'm usually exploring new tech tools and finding clever ways to optimize processes and boost productivity.
                         <br /><br />
                         <span className="italic text-slate-400">If you're looking for someone eager to learn, easy to work with, and serious about doing good work</span>
                     </p>
